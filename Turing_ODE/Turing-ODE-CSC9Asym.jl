@@ -2,7 +2,7 @@
 # https://doi.org/10.1016/j.chaos.2020.109846
 # https://doi.org/10.1016/j.chaos.2021.110652
 # https://doi.org/10.3390/axioms10030135
-# similar to Turing-ODE-CSC7Asym but differet config for parameters  (NOT YET)
+# similar to Turing-ODE-CSC7Asym but differet config for parameters  (β´´, γᵣ,γᵢ, δₚ, δₕ, δₐ, ρ₁)
 
 using Optim, StatsBase
 using DifferentialEquations
@@ -81,20 +81,20 @@ prob = ODEProblem(SIR, X0, tspan, par)
     # Prior distributions.
     σ ~ InverseGamma(2, 3)
     β ~ truncated(Normal(2, 1); lower=.1, upper=3.3)
-    β′ ~ truncated(Normal(3, 7); lower=1.5*β, upper=10)
-	β´´~ truncated(Normal(2, 6); lower=1.5*β, upper=2*β)
+    β′ ~ truncated(Normal(5, 2); lower=1.5*β, upper=10)
+	β´´~ truncated(Normal(2, 2); lower=1.5*β, upper=3*β)
     NN ~ truncated(Normal(1, 1000); lower=1, upper=10000)
 	κ ~ truncated(Normal(0, 1); lower=0, upper=1)
-	l ~ truncated(Normal(2, 2); lower=0.1, upper=2.5)
+	l ~ truncated(Normal(0, 2); lower=0.1, upper=2.5)
 	γₐ ~ truncated(Normal(0,1); lower=0, upper=1)
- 	γᵢ~ truncated(Normal(0,1); lower=0.1, upper=1)
-	γᵣ~ truncated(Normal(0,1); lower=1.5*γᵢ, upper=3*γᵢ)
+ 	γᵢ~ truncated(Normal(0,1); lower=0.02, upper=1)
+	γᵣ~ truncated(Normal(0,1); lower=1.5*γᵢ, upper=4*γᵢ)
  	δᵢ~ truncated(Normal(0,1); lower=0, upper=5)
-	δₚ~ truncated(Normal(0,1); lower=.5*δᵢ, upper=1.5*δᵢ)
-	δₕ~ truncated(Normal(0,1); lower=.5*δᵢ, upper=1.5*δᵢ)
-	δₐ~ truncated(Normal(0,1); lower=.5*δᵢ, upper=1.5*δᵢ)
+	δₚ~ truncated(Normal(0,1); lower=0, upper=1.2*δᵢ)
+	δₕ~ truncated(Normal(0,1); lower=0, upper=δᵢ)
+	δₐ~ truncated(Normal(0,1); lower=0, upper=δᵢ)
     ρ₂~ truncated(Normal(0,1); lower=0, upper=.02)
-    ρ₁~ truncated(Normal(0,1); lower=10*ρ₂, upper=50*ρ₂)
+    ρ₁~ truncated(Normal(0,1); lower=10*ρ₂, upper=1)
 
 	p=[10280000/NN, β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ]
 	S0=10280000/NN-5; E0=0; I0=4; P0=1; A0=0; H0=0; R0=0; F0=0
@@ -118,7 +118,7 @@ end
 model = fitprob([C TrueF], prob)
 
 # Sample 3 independent chains with forward-mode automatic differentiation (the default).
-nChain=5000
+nChain=6000
 chain = sample(model, NUTS(0.65), MCMCSerial(), nChain, 4; progress=false)
 
 posterior_samples = sample(chain[[:β, :β´´,:NN, :κ,:l, :β′, :ρ₁, :ρ₂, :γₐ, :γᵢ, :γᵣ,:δᵢ ,:δₚ , :δₕ, :δₐ]], nChain; replace=false)
