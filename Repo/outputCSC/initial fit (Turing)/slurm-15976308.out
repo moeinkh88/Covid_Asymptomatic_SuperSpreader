@@ -1,0 +1,268 @@
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Info: Found initial step size
+└   ϵ = 2.44140625e-5
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Info: Found initial step size
+└   ϵ = 0.000390625
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Info: Found initial step size
+└   ϵ = 0.0001953125
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: The current proposal will be rejected due to numerical error(s).
+│   isfinite.((θ, r, ℓπ, ℓκ)) = (true, false, false, false)
+└ @ AdvancedHMC ~/.julia/packages/AdvancedHMC/4fByY/src/hamiltonian.jl:49
+┌ Warning: Assignment to `β` in soft scope is ambiguous because a global variable by the same name exists: `β` will be treated as a new local. Disambiguate by using `local β` to suppress this warning or `global β` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `κ` in soft scope is ambiguous because a global variable by the same name exists: `κ` will be treated as a new local. Disambiguate by using `local κ` to suppress this warning or `global κ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `l` in soft scope is ambiguous because a global variable by the same name exists: `l` will be treated as a new local. Disambiguate by using `local l` to suppress this warning or `global l` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `β′` in soft scope is ambiguous because a global variable by the same name exists: `β′` will be treated as a new local. Disambiguate by using `local β′` to suppress this warning or `global β′` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `γₐ` in soft scope is ambiguous because a global variable by the same name exists: `γₐ` will be treated as a new local. Disambiguate by using `local γₐ` to suppress this warning or `global γₐ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `γᵢ` in soft scope is ambiguous because a global variable by the same name exists: `γᵢ` will be treated as a new local. Disambiguate by using `local γᵢ` to suppress this warning or `global γᵢ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `γᵣ` in soft scope is ambiguous because a global variable by the same name exists: `γᵣ` will be treated as a new local. Disambiguate by using `local γᵣ` to suppress this warning or `global γᵣ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `δᵢ` in soft scope is ambiguous because a global variable by the same name exists: `δᵢ` will be treated as a new local. Disambiguate by using `local δᵢ` to suppress this warning or `global δᵢ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `δₚ` in soft scope is ambiguous because a global variable by the same name exists: `δₚ` will be treated as a new local. Disambiguate by using `local δₚ` to suppress this warning or `global δₚ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `δₕ` in soft scope is ambiguous because a global variable by the same name exists: `δₕ` will be treated as a new local. Disambiguate by using `local δₕ` to suppress this warning or `global δₕ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:125
+┌ Warning: Assignment to `E0` in soft scope is ambiguous because a global variable by the same name exists: `E0` will be treated as a new local. Disambiguate by using `local E0` to suppress this warning or `global E0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:127
+┌ Warning: Assignment to `I0` in soft scope is ambiguous because a global variable by the same name exists: `I0` will be treated as a new local. Disambiguate by using `local I0` to suppress this warning or `global I0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:127
+┌ Warning: Assignment to `P0` in soft scope is ambiguous because a global variable by the same name exists: `P0` will be treated as a new local. Disambiguate by using `local P0` to suppress this warning or `global P0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:127
+┌ Warning: Assignment to `A0` in soft scope is ambiguous because a global variable by the same name exists: `A0` will be treated as a new local. Disambiguate by using `local A0` to suppress this warning or `global A0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:127
+┌ Warning: Assignment to `H0` in soft scope is ambiguous because a global variable by the same name exists: `H0` will be treated as a new local. Disambiguate by using `local H0` to suppress this warning or `global H0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:127
+┌ Warning: Assignment to `R0` in soft scope is ambiguous because a global variable by the same name exists: `R0` will be treated as a new local. Disambiguate by using `local R0` to suppress this warning or `global R0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:127
+┌ Warning: Assignment to `F0` in soft scope is ambiguous because a global variable by the same name exists: `F0` will be treated as a new local. Disambiguate by using `local F0` to suppress this warning or `global F0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:127
+┌ Warning: Assignment to `X0` in soft scope is ambiguous because a global variable by the same name exists: `X0` will be treated as a new local. Disambiguate by using `local X0` to suppress this warning or `global X0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:128
+┌ Warning: Assignment to `prob` in soft scope is ambiguous because a global variable by the same name exists: `prob` will be treated as a new local. Disambiguate by using `local prob` to suppress this warning or `global prob` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC4.jl:130
+2-element Vector{Float64}:
+  235.1978088496152
+ 2984.0
+11-element Vector{Float64}:
+   2.359939858111252
+ 452.87218548671217
+   0.009595315154256167
+   8.275190256520272
+   8.380102316947953
+   0.45861694822301496
+   0.0004633956458065019
+   0.18202640045361163
+   0.2028699209329921
+   0.7001389458281913
+   0.00012429805019408425
+Chains MCMC chain (5000×24×3 Array{Float64, 3}):
+
+Iterations        = 1001:1:6000
+Number of chains  = 3
+Samples per chain = 5000
+Wall duration     = 4607.08 seconds
+Compute duration  = 4603.54 seconds
+parameters        = σ, β, NN, κ, l, β′, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters       mean        std   naive_se      mcse          ess      rhat   ess_per_sec
+      Symbol    Float64    Float64    Float64   Float64      Float64   Float64       Float64
+
+           σ   240.0745    11.5098     0.0940    0.1065   12781.0503    1.0000        2.7764
+           β     2.6911     1.1082     0.0090    0.0100   12691.4745    1.0001        2.7569
+          NN   570.5968   224.3018     1.8314    3.1651    4475.3483    1.0004        0.9722
+           κ     0.0162     0.0180     0.0001    0.0005    1224.9260    1.0014        0.2661
+           l     7.7828     4.9829     0.0407    0.0630    6834.2148    1.0003        1.4846
+          β′     9.3727     5.6881     0.0464    0.0481   15592.0181    0.9999        3.3870
+          γₐ     0.4917     0.2222     0.0018    0.0028    5439.6213    1.0003        1.1816
+          γᵢ     0.0309     0.0326     0.0003    0.0004    4994.0510    1.0007        1.0848
+          γᵣ     0.2191     0.0853     0.0007    0.0014    2908.5554    1.0006        0.6318
+          δᵢ     0.1970     0.0907     0.0007    0.0012    4976.1318    1.0004        1.0809
+          δₚ     0.4591     0.2821     0.0023    0.0024   15908.0856    0.9999        3.4556
+          δₕ     0.0161     0.0322     0.0003    0.0005    3437.2308    1.0006        0.7466
+
+Quantiles
+  parameters       2.5%      25.0%      50.0%      75.0%       97.5%
+      Symbol    Float64    Float64    Float64    Float64     Float64
+
+           σ   219.1021   231.9917   239.6540   247.7058    263.9204
+           β     1.0722     1.7310     2.5469     3.5545      4.8291
+          NN   204.7840   403.0853   544.4168   714.6505   1067.8956
+           κ     0.0039     0.0085     0.0125     0.0189      0.0468
+           l     0.6826     3.7404     6.8632    11.1263     18.7022
+          β′     0.3902     4.4835     9.0759    14.1742     19.4070
+          γₐ     0.1751     0.3097     0.4461     0.6503      0.9555
+          γᵢ     0.0008     0.0088     0.0210     0.0416      0.1215
+          γᵣ     0.1399     0.1710     0.1970     0.2370      0.4428
+          δᵢ     0.0678     0.1264     0.1772     0.2559      0.4001
+          δₚ     0.0190     0.2149     0.4418     0.6911      0.9650
+          δₕ     0.0003     0.0034     0.0085     0.0183      0.0738
+

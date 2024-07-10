@@ -1,0 +1,626 @@
+Fminbox
+-------
+Initial mu = 0.0482443
+
+Fminbox iteration 1
+-------------------
+Calling inner optimizer with mu = 0.0482443
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     4.844267e+02     4.772031e+02
+ * time: 0.014194011688232422
+    20     3.057836e+02     2.448515e+03
+ * time: 13.413782835006714
+    40     2.243849e+02     8.755920e+08
+ * time: 25.03442096710205
+
+Exiting inner optimizer with x = [1.0000000000115987e-5, 0.6219205818941682, 0.1520930026874141]
+Current distance to box: 1.15986e-16
+Decreasing barrier term μ.
+
+Fminbox iteration 2
+-------------------
+Calling inner optimizer with mu = 4.82443e-5
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     2.079790e+02     4.142985e+02
+ * time: 6.4849853515625e-5
+
+Exiting inner optimizer with x = [1.0000000000115987e-5, 0.6219205818941682, 0.1520930026874141]
+Current distance to box: 1.15986e-16
+Decreasing barrier term μ.
+
+Fminbox
+-------
+Initial mu = 0.250836
+
+Fminbox iteration 1
+-------------------
+Calling inner optimizer with mu = 0.250836
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     1.522955e+03     3.188908e+03
+ * time: 5.9604644775390625e-6
+    20     2.556328e+02     1.609210e+03
+ * time: 31.41995882987976
+    40     9.939550e+01     1.113353e+03
+ * time: 65.65595698356628
+    60     9.877869e+01     3.339125e-07
+ * time: 95.60057282447815
+
+Exiting inner optimizer with x = [5.0082564144570565, 0.00287169190446986, 0.4687890882210582, 0.035910736464546594, 0.0024472814406602495]
+Current distance to box: 0.00243728
+Decreasing barrier term μ.
+
+Fminbox iteration 2
+-------------------
+Calling inner optimizer with mu = 0.000250836
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.541747e+01     1.026683e+02
+ * time: 6.9141387939453125e-6
+    20     9.522601e+01     9.876959e-07
+ * time: 28.095757961273193
+    40     9.522601e+01     6.489698e-07
+ * time: 60.62044286727905
+
+Exiting inner optimizer with x = [8.925791945080043, 1.5973772212225202e-5, 0.1253921571050113, 0.03616197017852121, 0.0025601473859426854]
+Current distance to box: 5.97377e-6
+Decreasing barrier term μ.
+
+Fminbox iteration 3
+-------------------
+Calling inner optimizer with mu = 2.50836e-7
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.522067e+01     4.198936e+01
+ * time: 6.9141387939453125e-6
+    20     9.522020e+01     3.557497e-02
+ * time: 33.30873894691467
+    40     9.522020e+01     6.990405e-05
+ * time: 60.9901020526886
+    60     9.522020e+01     1.495602e-05
+ * time: 91.07137084007263
+
+Exiting inner optimizer with x = [9.998780741901395, 1.0005995772451424e-5, 0.11892836511165408, 0.03616079088886211, 0.0025604884688254937]
+Current distance to box: 5.99577e-9
+Decreasing barrier term μ.
+
+Fminbox iteration 4
+-------------------
+Calling inner optimizer with mu = 2.50836e-10
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.522019e+01     4.183553e+01
+ * time: 5.9604644775390625e-6
+
+Exiting inner optimizer with x = [9.999998780634812, 1.0000005995511915e-5, 0.11892155876625604, 0.036160789597181754, 0.002560488810423076]
+Current distance to box: 5.99551e-12
+Decreasing barrier term μ.
+
+Fminbox iteration 5
+-------------------
+Calling inner optimizer with mu = 2.50836e-13
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.522019e+01     4.183538e+01
+ * time: 6.198883056640625e-6
+    20     9.522019e+01     8.333039e-04
+ * time: 29.891717195510864
+
+Exiting inner optimizer with x = [9.999999998780625, 1.0000000005995891e-5, 0.11892153901432947, 0.03616078959319504, 0.002560488811064218]
+Current distance to box: 5.99589e-15
+Decreasing barrier term μ.
+
+Fminbox iteration 6
+-------------------
+Calling inner optimizer with mu = 2.50836e-16
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.522019e+01     4.183537e+01
+ * time: 6.9141387939453125e-6
+
+Exiting inner optimizer with x = [9.999999999998796, 1.0000000000006067e-5, 0.11892153860018115, 0.03616078959307227, 0.0025604888110694556]
+Current distance to box: 6.06645e-18
+Decreasing barrier term μ.
+
+Fminbox iteration 7
+-------------------
+Calling inner optimizer with mu = 2.50836e-19
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.522019e+01     4.183537e+01
+ * time: 6.9141387939453125e-6
+
+Exiting inner optimizer with x = [9.999999999999998, 1.0000000000000008e-5, 0.11892153860018115, 0.036160789593072416, 0.002560488811070843]
+Current distance to box: 6.77626e-21
+Decreasing barrier term μ.
+
+Fminbox iteration 8
+-------------------
+Calling inner optimizer with mu = 2.50836e-22
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.522019e+01     4.183537e+01
+ * time: 6.9141387939453125e-6
+
+Exiting inner optimizer with x = [9.999999999999998, 1.0000000000000003e-5, 0.11892153860018115, 0.036160789593072416, 0.002560488811070844]
+Current distance to box: 1.69407e-21
+Decreasing barrier term μ.
+
+Fminbox
+-------
+Initial mu = 0.0265617
+
+Fminbox iteration 1
+-------------------
+Calling inner optimizer with mu = 0.0265617
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     3.348756e+02     1.068593e+03
+ * time: 9.059906005859375e-6
+    20     1.488648e+02     5.952406e+02
+ * time: 35.517168045043945
+    40     1.073049e+02     1.655816e+03
+ * time: 74.22347593307495
+    60     9.892199e+01     1.620101e+02
+ * time: 100.90281510353088
+    80     9.860092e+01     2.750322e+01
+ * time: 122.38662195205688
+   100     9.853555e+01     3.966598e+01
+ * time: 141.29506993293762
+   120     9.840666e+01     5.086854e+01
+ * time: 160.6925070285797
+   140     9.828896e+01     1.543192e+01
+ * time: 180.40686106681824
+   160     9.828791e+01     1.338989e-01
+ * time: 198.49831008911133
+   180     9.828791e+01     2.962101e-04
+ * time: 215.65030789375305
+   200     9.828791e+01     2.026633e-06
+ * time: 232.37813305854797
+
+Exiting inner optimizer with x = [0.0003160270781126497, 0.028820619362349722, 0.06374512543774874, 0.9072406053875182, 0.9943092109091474, 0.9943389392628474, 0.43096882347945265, 0.47828314286165396, 0.9229521430863429, 0.49079687809046146, 0.9995148983930683]
+Current distance to box: 0.000306027
+Decreasing barrier term μ.
+
+Fminbox iteration 2
+-------------------
+Calling inner optimizer with mu = 2.65617e-5
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.694542e+01     8.677016e+01
+ * time: 6.9141387939453125e-6
+    20     9.677064e+01     2.712194e+02
+ * time: 34.78592896461487
+    40     9.677044e+01     2.861368e+00
+ * time: 55.74509286880493
+    60     9.677043e+01     5.002068e-03
+ * time: 72.4767439365387
+    80     9.677043e+01     1.950145e-04
+ * time: 89.28512191772461
+   100     9.677043e+01     5.030050e-06
+ * time: 112.7617609500885
+   120     9.677043e+01     2.269618e-06
+ * time: 137.92095589637756
+   140     9.677043e+01     1.180987e-06
+ * time: 157.63665008544922
+   160     9.677043e+01     1.461226e-07
+ * time: 178.1592059135437
+   180     9.677043e+01     1.447631e-06
+ * time: 204.14995098114014
+   200     9.677043e+01     5.414869e-07
+ * time: 226.82650709152222
+
+Exiting inner optimizer with x = [1.0327354495218673e-5, 4.0559491423330884e-5, 0.06442567570691596, 0.9039622259425129, 0.9999734525500302, 0.9999930379114116, 0.4000346264758246, 0.4001300301658104, 0.9105660161520207, 0.40016642177597117, 0.9999991292700208]
+Current distance to box: 3.27354e-7
+Decreasing barrier term μ.
+
+Fminbox iteration 3
+-------------------
+Calling inner optimizer with mu = 2.65617e-8
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.676774e+01     8.114057e+01
+ * time: 5.0067901611328125e-6
+    20     9.676751e+01     5.215719e+01
+ * time: 31.05829405784607
+    40     9.676751e+01     1.772390e+00
+ * time: 49.58827304840088
+    60     9.676751e+01     2.535194e-01
+ * time: 66.38590908050537
+    80     9.676751e+01     2.267395e-02
+ * time: 83.24800705909729
+   100     9.676751e+01     9.130576e-03
+ * time: 100.00423502922058
+   120     9.676751e+01     2.261385e-03
+ * time: 116.77574396133423
+   140     9.676751e+01     9.606388e-04
+ * time: 134.3656141757965
+   160     9.676751e+01     2.609829e-04
+ * time: 154.16604804992676
+   180     9.676751e+01     2.383502e-05
+ * time: 172.6852490901947
+   200     9.676751e+01     5.967403e-07
+ * time: 194.93675804138184
+
+Exiting inner optimizer with x = [1.000032741252069e-5, 1.0030563532096887e-5, 0.06442771699251204, 0.9039514806332261, 0.9999999474576634, 0.9999999861007677, 0.40000003463288575, 0.40000013019324426, 0.9105227101495381, 0.40000016668282756, 0.9999999990043599]
+Current distance to box: 3.27413e-10
+Decreasing barrier term μ.
+
+Fminbox iteration 4
+-------------------
+Calling inner optimizer with mu = 2.65617e-11
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.676750e+01     8.112621e+01
+ * time: 5.9604644775390625e-6
+    20     9.676750e+01     1.328403e-03
+ * time: 24.34907078742981
+    40     9.676750e+01     1.192481e-03
+ * time: 46.9822678565979
+    60     9.676750e+01     1.192467e-03
+ * time: 83.77598786354065
+    80     9.676750e+01     1.192482e-03
+ * time: 102.81742000579834
+   100     9.676750e+01     4.754469e-03
+ * time: 122.95484781265259
+
+Exiting inner optimizer with x = [1.0000000327413819e-5, 1.0000030563817233e-5, 0.06442772071940887, 0.9039514607608131, 0.9999999999470067, 0.9999999999860689, 0.40000000003463293, 0.4000000001301942, 0.9105226293590192, 0.4000000001666837, 0.9999999999990042]
+Current distance to box: 3.27414e-13
+Decreasing barrier term μ.
+
+Fminbox iteration 5
+-------------------
+Calling inner optimizer with mu = 2.65617e-14
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.676750e+01     8.112619e+01
+ * time: 4.291534423828125e-5
+    20     9.676750e+01     3.232190e+00
+ * time: 43.586122035980225
+
+Exiting inner optimizer with x = [1.000000000032353e-5, 1.0000000031006548e-5, 0.06442772071315948, 0.9039514607648129, 0.9999999999999473, 0.9999999999999859, 0.4000000000000345, 0.4000000000001338, 0.9105226293463891, 0.4000000000001665, 0.999999999999999]
+Current distance to box: 3.23529e-16
+Decreasing barrier term μ.
+
+Fminbox iteration 6
+-------------------
+Calling inner optimizer with mu = 2.65617e-17
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.676750e+01     8.112619e+01
+ * time: 5.9604644775390625e-6
+    20     9.676750e+01     7.346286e+01
+ * time: 498.91611790657043
+    40     9.676750e+01     2.643442e+01
+ * time: 927.8426949977875
+    60     9.676750e+01     2.643442e+01
+ * time: 1339.1024599075317
+
+Exiting inner optimizer with x = [1.0000000000000262e-5, 1.0000000000190312e-5, 0.06442772074996639, 0.9039514607414977, 0.9999999999999993, 0.9999999999999998, 0.4000000000000004, 0.4000000000000002, 0.9105226294767675, 0.40000000000000147, 0.9999999999999999]
+Current distance to box: 2.60886e-19
+Decreasing barrier term μ.
+
+Fminbox iteration 7
+-------------------
+Calling inner optimizer with mu = 2.65617e-20
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.676750e+01     8.112620e+01
+ * time: 7.867813110351562e-6
+
+Exiting inner optimizer with x = [1.0000000000000003e-5, 1.0000000000127844e-5, 0.06442772070752761, 0.9039514607773357, 0.9999999999999993, 0.9999999999999998, 0.4000000000000004, 0.4000000000000002, 0.9105226294595419, 0.4000000000000008, 0.9999999999999999]
+Current distance to box: 1.69407e-21
+Decreasing barrier term μ.
+
+Fminbox iteration 8
+-------------------
+Calling inner optimizer with mu = 2.65617e-23
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.676750e+01     8.112619e+01
+ * time: 0.022207021713256836
+
+Exiting inner optimizer with x = [1.0000000000000003e-5, 1.0000000000121806e-5, 0.06442772070751838, 0.9039514607773412, 0.9999999999999993, 0.9999999999999998, 0.4000000000000004, 0.4000000000000002, 0.9105226294595328, 0.4000000000000008, 0.9999999999999999]
+Current distance to box: 1.69407e-21
+Decreasing barrier term μ.
+
+Fminbox
+-------
+Initial mu = 0.135563
+
+Fminbox iteration 1
+-------------------
+Calling inner optimizer with mu = 0.135563
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.509721e+02     3.788243e+03
+ * time: 5.9604644775390625e-6
+    20     2.186525e+02     2.039441e+02
+ * time: 77.99575805664062
+    40     2.017797e+02     5.829090e+02
+ * time: 133.22081398963928
+    60     1.544781e+02     8.663890e+07
+ * time: 204.0417230129242
+    80     1.141665e+02     1.437904e+07
+ * time: 260.8334789276123
+   100     1.052094e+02     4.061320e+06
+ * time: 315.53256702423096
+   120     1.033560e+02     6.197839e+05
+ * time: 363.27763295173645
+   140     1.029758e+02     2.361311e+05
+ * time: 410.0229880809784
+   160     1.027068e+02     7.727859e+04
+ * time: 451.15258502960205
+   180     1.023569e+02     1.100270e+04
+ * time: 492.6535220146179
+   200     1.021061e+02     1.811620e+03
+ * time: 535.0838139057159
+
+Exiting inner optimizer with x = [5.7249321426603625, 0.001291865582388635, 0.2594098791376055, 0.04175515343786503, 0.0030361991667478046, 0.9691120595617473, 0.9999256058594438, 0.9713598737987033, 0.6229590092800181, 0.9146929572337227, 0.9637818672437979, 0.5778385827514868, 0.9791313713034511]
+Current distance to box: 7.43941e-5
+Decreasing barrier term μ.
+
+Fminbox iteration 2
+-------------------
+Calling inner optimizer with mu = 0.000135563
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.549667e+01     2.530318e+02
+ * time: 5.9604644775390625e-6
+    20     9.506475e+01     2.421823e+03
+ * time: 70.67624688148499
+    40     9.504400e+01     1.248672e+02
+ * time: 126.74733686447144
+    60     9.504063e+01     1.276373e+01
+ * time: 178.8270308971405
+    80     9.504033e+01     1.358014e+01
+ * time: 224.0551450252533
+   100     9.504022e+01     7.183912e+00
+ * time: 266.4904420375824
+   120     9.504009e+01     4.592290e+00
+ * time: 308.03118205070496
+   140     9.504008e+01     9.129512e-01
+ * time: 348.7862148284912
+   160     9.504008e+01     3.859346e-01
+ * time: 387.787575006485
+   180     9.504008e+01     6.900279e-02
+ * time: 426.81474804878235
+   200     9.504008e+01     8.657222e-03
+ * time: 465.956326007843
+
+Exiting inner optimizer with x = [5.705690002439694, 1.2470077851425177e-5, 0.0011146969608010896, 0.04108005585184302, 0.002106550648101581, 0.9753881142638787, 0.9999508527599517, 0.9999010293992687, 0.9185374172475076, 0.9705230597081064, 0.9738859720911139, 0.4013508967012438, 0.9999684580654349]
+Current distance to box: 2.47008e-6
+Decreasing barrier term μ.
+
+Fminbox iteration 3
+-------------------
+Calling inner optimizer with mu = 1.35563e-7
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.502927e+01     5.489041e+01
+ * time: 6.198883056640625e-6
+    20     9.502846e+01     2.058392e+01
+ * time: 70.95125699043274
+    40     9.502844e+01     6.610233e+00
+ * time: 125.32716012001038
+    60     9.502844e+01     4.827823e+00
+ * time: 169.0177240371704
+    80     9.502844e+01     6.379527e+00
+ * time: 210.30028820037842
+   100     9.502844e+01     2.573574e+00
+ * time: 253.30160117149353
+   120     9.502844e+01     1.470173e+00
+ * time: 297.4188799858093
+   140     9.502844e+01     1.241811e+00
+ * time: 337.6690831184387
+   160     9.502844e+01     2.771761e+00
+ * time: 378.2127060890198
+   180     9.502844e+01     6.732518e+00
+ * time: 420.6395311355591
+   200     9.502844e+01     1.282499e+00
+ * time: 461.307177066803
+
+Exiting inner optimizer with x = [5.706977511793358, 1.0002426721069016e-5, 1.1242629684749677e-5, 0.04096849587424707, 0.0021233791828631403, 0.9759439823769522, 0.9999999075531191, 0.9999997938336131, 0.9475914427062854, 0.9701314009791673, 0.9745310536224626, 0.4000013786115604, 0.9999999457777919]
+Current distance to box: 2.42672e-9
+Decreasing barrier term μ.
+
+Fminbox iteration 4
+-------------------
+Calling inner optimizer with mu = 1.35563e-10
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.502843e+01     5.457992e+01
+ * time: 5.9604644775390625e-6
+    20     9.502842e+01     1.392482e+03
+ * time: 82.47250318527222
+    40     9.502817e+01     1.592906e+03
+ * time: 191.6161551475525
+    60     9.502817e+01     1.735504e+03
+ * time: 268.1419429779053
+    80     9.502817e+01     1.872720e+02
+ * time: 324.0831460952759
+   100     9.502817e+01     2.088532e+01
+ * time: 376.06408309936523
+   120     9.502817e+01     1.808250e+01
+ * time: 425.1415231227875
+   140     9.502817e+01     6.357090e+00
+ * time: 471.06519198417664
+   160     9.502817e+01     6.210193e+00
+ * time: 515.0079669952393
+   180     9.502817e+01     1.045531e+01
+ * time: 559.0571300983429
+   200     9.502817e+01     7.851161e+00
+ * time: 601.5527091026306
+
+Exiting inner optimizer with x = [9.999997785208327, 1.0000002905017272e-5, 1.0001130094048213e-5, 0.04094103882797064, 0.002128410879835885, 0.9760529120576572, 0.9999999999771533, 0.999999999810284, 0.952110130008399, 0.9699262215188845, 0.9745840752692444, 0.40000000123685997, 0.9999999998698315]
+Current distance to box: 2.90502e-12
+Decreasing barrier term μ.
+
+Fminbox iteration 5
+-------------------
+Calling inner optimizer with mu = 1.35563e-13
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.502817e+01     5.451612e+01
+ * time: 5.9604644775390625e-6
+    20     9.502817e+01     5.354216e+01
+ * time: 80.94494295120239
+    40     9.502817e+01     4.656953e+01
+ * time: 128.44917798042297
+    60     9.502817e+01     5.658144e+01
+ * time: 173.9517960548401
+    80     9.502817e+01     6.338403e+01
+ * time: 219.5290880203247
+   100     9.502817e+01     5.670221e+01
+ * time: 261.9235098361969
+   120     9.502817e+01     2.766580e+01
+ * time: 311.88832092285156
+   140     9.502817e+01     2.899640e+01
+ * time: 359.70511388778687
+   160     9.502817e+01     1.175276e+01
+ * time: 404.6712329387665
+   180     9.502817e+01     2.009701e+01
+ * time: 449.616446018219
+   200     9.502817e+01     2.634418e+00
+ * time: 494.47993683815
+
+Exiting inner optimizer with x = [9.999999997024792, 1.0000000002612921e-5, 1.0000001725648527e-5, 0.040941004369444145, 0.0021284148953403565, 0.9760530741162583, 0.999999999999802, 0.9999999999996746, 0.9521147985623667, 0.9699262716165199, 0.9745842649511766, 0.40000000000166996, 0.9999999999999263]
+Current distance to box: 2.61292e-15
+Decreasing barrier term μ.
+
+Fminbox iteration 6
+-------------------
+Calling inner optimizer with mu = 1.35563e-16
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.502817e+01     5.451603e+01
+ * time: 5.9604644775390625e-6
+    20     9.502817e+01     6.664028e+02
+ * time: 1108.9671919345856
+    40     9.502817e+01     6.613983e+03
+ * time: 1661.7815899848938
+    60     9.502817e+01     7.996747e+04
+ * time: 2254.740417957306
+    80     9.502817e+01     1.578586e+03
+ * time: 2724.4122519493103
+   100     9.502817e+01     2.704863e+03
+ * time: 3383.367152929306
+   120     9.502817e+01     2.725132e+01
+ * time: 3603.7543909549713
+   140     9.502817e+01     1.012205e+01
+ * time: 3884.5224089622498
+   160     9.502817e+01     2.364730e+02
+ * time: 4433.164580821991
+   180     9.502817e+01     3.742830e+01
+ * time: 4966.7022478580475
+   200     9.502817e+01     7.333289e+00
+ * time: 5694.270221948624
+
+Exiting inner optimizer with x = [9.999999999997348, 1.0000000000002874e-5, 1.0000000000539601e-5, 0.04094100483444172, 0.002128415268257065, 0.9760530733018531, 0.9999999999999994, 0.9999999999999991, 0.9521151744186441, 0.969926215838062, 0.9745842635918426, 0.40000000000000313, 0.9999999999999997]
+Current distance to box: 2.87314e-18
+Decreasing barrier term μ.
+
+Fminbox iteration 7
+-------------------
+Calling inner optimizer with mu = 1.35563e-19
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.502817e+01     5.451606e+01
+ * time: 1.9073486328125e-5
+    20     9.502817e+01     2.550594e+01
+ * time: 1149.713459968567
+    40     9.502817e+01     1.450506e+01
+ * time: 2400.9303739070892
+
+Exiting inner optimizer with x = [9.99999999999993, 1.0000000000000004e-5, 1.0000000000098418e-5, 0.04094100445426983, 0.002128415318598638, 0.9760530750419782, 0.9999999999999999, 0.9999999999999999, 0.9521151750220753, 0.969926215643613, 0.9745842647475106, 0.4000000000000001, 0.9999999999999999]
+Current distance to box: 3.38813e-21
+Decreasing barrier term μ.
+
+Fminbox iteration 8
+-------------------
+Calling inner optimizer with mu = 1.35563e-22
+
+(numbers below include barrier contribution)
+Iter     Function value   Gradient norm 
+     0     9.502817e+01     5.451606e+01
+ * time: 5.9604644775390625e-6
+
+Exiting inner optimizer with x = [9.99999999999993, 1.0000000000000003e-5, 1.0000000000067343e-5, 0.04094100445063574, 0.0021284153188293273, 0.9760530750419695, 0.9999999999999999, 0.9999999999999999, 0.9521151750228674, 0.9699262156434967, 0.97458426474884, 0.4000000000000001, 0.9999999999999999]
+Current distance to box: 1.69407e-21
+Decreasing barrier term μ.
+
+20-element Vector{Any}:
+    "Err1="
+ 207.97710370402393
+    "par1="
+    [9491.698589102096, 3.7867885928014893, 2.282972432258884, 0.9407139791767547, 6.767816564146801, 0.11784770556372894, 0.58, 0.001, 0.15459463331892578, 0.6976487340139972, 0.001310080700085496, 1.0000000000115987e-5, 0.6219205818941682, 0.1520930026874141, 0.0025773545913321608]
+    "Err1f8="
+  96.76750243698343
+    "par1f8="
+    [9491.698589102096, 3.7867885928014893, 2.282972432258884, 0.9407139791767547, 6.767816564146801, 0.11784770556372894, 0.58, 0.001, 0.15459463331892578, 0.6976487340139972, 0.001310080700085496, 1.0000000000000003e-5, 1.0000000000121806e-5, 0.06442772070751838, 0.0025773545913321608]
+    "order1f8="
+    [0.9039514607773412, 0.9999999999999993, 0.9999999999999998, 0.4000000000000004, 0.4000000000000002, 0.9105226294595328, 0.4000000000000008, 0.9999999999999999]
+    "Err2="
+  95.2198100854496
+    "par2="
+    [9491.698589102096, 3.7867885928014893, 2.282972432258884, 0.9407139791767547, 9.999999999999998, 0.11784770556372894, 0.58, 0.001, 0.15459463331892578, 0.6976487340139972, 0.001310080700085496, 1.0000000000000003e-5, 0.11892153860018115, 0.036160789593072416, 0.002560488811070844]
+    "Err2f8="
+  95.02810164859427
+    "par2f8="
+    [9491.698589102096, 3.7867885928014893, 2.282972432258884, 0.9407139791767547, 9.99999999999993, 0.11784770556372894, 0.58, 0.001, 0.15459463331892578, 0.6976487340139972, 0.001310080700085496, 1.0000000000000003e-5, 1.0000000000067343e-5, 0.04094100445063574, 0.0021284153188293273]
+    "order2f8="
+    [0.9760530750419695, 0.9999999999999999, 0.9999999999999999, 0.9521151750228674, 0.9699262156434967, 0.97458426474884, 0.4000000000000001, 0.9999999999999999]
+pure virtual method called
+terminate called without an active exception
+
+signal (6): Aborted
+in expression starting at none:0
+gsignal at /lib64/libc.so.6 (unknown line)
+abort at /lib64/libc.so.6 (unknown line)
+__verbose_terminate_handler at /workspace/srcdir/gcc-12.1.0/libstdc++-v3/libsupc++/vterminate.cc:95
+__terminate at /workspace/srcdir/gcc-12.1.0/libstdc++-v3/libsupc++/eh_terminate.cc:48
+terminate at /workspace/srcdir/gcc-12.1.0/libstdc++-v3/libsupc++/eh_terminate.cc:58
+__cxa_pure_virtual at /workspace/srcdir/gcc-12.1.0/libstdc++-v3/libsupc++/pure.cc:50
+_ZN4llvm11raw_ostream5writeEPKcm at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN4llvm11LLVMContext8diagnoseERKNS_14DiagnosticInfoE at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZNSt17_Function_handlerIFvRKN4llvm12SMDiagnosticEbRKNS0_9SourceMgrERSt6vectorIPKNS0_6MDNodeESaISA_EEEZNS0_28MachineModuleInfoWrapperPass16doInitializationERNS0_6ModuleEEUlS3_bS6_SD_E_E9_M_invokeERKSt9_Any_dataS3_ObS6_SD_ at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN4llvm9MCContext8diagnoseERKNS_12SMDiagnosticE at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN12_GLOBAL__N_19AsmParser11DiagHandlerERKN4llvm12SMDiagnosticEPv at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZNK4llvm9SourceMgr12PrintMessageERNS_11raw_ostreamENS_5SMLocENS0_8DiagKindERKNS_5TwineENS_8ArrayRefINS_7SMRangeEEENS8_INS_7SMFixItEEEb at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZNK4llvm9SourceMgr12PrintMessageENS_5SMLocENS0_8DiagKindERKNS_5TwineENS_8ArrayRefINS_7SMRangeEEENS6_INS_7SMFixItEEEb at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN12_GLOBAL__N_19AsmParser3RunEbb at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZNK4llvm10AsmPrinter13emitInlineAsmENS_9StringRefERKNS_15MCSubtargetInfoERKNS_15MCTargetOptionsEPKNS_6MDNodeENS_9InlineAsm10AsmDialectE at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZNK4llvm10AsmPrinter13emitInlineAsmEPKNS_12MachineInstrE at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN4llvm10AsmPrinter16emitFunctionBodyEv at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN4llvm13X86AsmPrinter20runOnMachineFunctionERNS_15MachineFunctionE at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN4llvm19MachineFunctionPass13runOnFunctionERNS_8FunctionE at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN4llvm13FPPassManager13runOnFunctionERNS_8FunctionE at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN4llvm13FPPassManager11runOnModuleERNS_6ModuleE at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
+_ZN4llvm6legacy15PassManagerImpl3runERNS_6ModuleE at /appl/soft/math/julia/julia-1.8.5/usr/lib/libLLVM-13jl.so (unknown line)
