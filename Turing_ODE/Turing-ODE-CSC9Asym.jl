@@ -2,7 +2,7 @@
 # https://doi.org/10.1016/j.chaos.2020.109846
 # https://doi.org/10.1016/j.chaos.2021.110652
 # https://doi.org/10.3390/axioms10030135
-# similar to Turing-ODE-CSC7Asym but differet config for parameters 
+# similar to Turing-ODE-CSC7Asym but differet config for parameters  (NOT YET)
 
 using Optim, StatsBase
 using DifferentialEquations
