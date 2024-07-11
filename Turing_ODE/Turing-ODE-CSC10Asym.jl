@@ -46,7 +46,7 @@ l=1.56 # Relative transmissibility of hospitalized patients
 δᵢ=1/23 # Disease induced death rate due to infected class
 δₚ=1/23 # Disease induced death rate due to super-spreaders
 δₕ=1/23 # Disease induced death rate due to hospitalized class
-δₐ=0 #denotes the disease induced death rates due to hospitalized individuals
+δₐ=0 #denotes the disease induced death rates due to asymptomatic individuals
 
 
 # Initial conditions
@@ -83,20 +83,20 @@ prob = ODEProblem(SIR, X0, tspan, par)
     # Prior distributions.
     σ ~ InverseGamma(2, 3)
     β ~ truncated(Normal(2, 1); lower=.1, upper=3.3)
-    β′ ~ truncated(Normal(5, 1); lower=2*β, upper=12)
-	β´´~ truncated(Normal(2, 1); lower=.9*β, upper=2*β)
+    β′ ~ truncated(Normal(5, 1); lower=2*β, upper=10)
+	β´´~ truncated(Normal(2, 1); lower=β, upper=2*β)
     NN ~ truncated(Normal(1000, 2000); lower=1, upper=10000)
 	κ ~ truncated(Normal(0, 1); lower=0, upper=1)
 	l ~ truncated(Normal(0, 2); lower=0.1, upper=2.5)
 	γₐ ~ truncated(Normal(0,1); lower=0, upper=1)
  	γᵢ~ truncated(Normal(0,1); lower=0.02, upper=1)
 	γᵣ~ truncated(Normal(0,1); lower=1.5*γᵢ, upper=4)
- 	δᵢ~ truncated(Normal(0,1); lower=0, upper=3)
+ 	δᵢ~ truncated(Normal(0,1); lower=0, upper=.1)
 	δₚ~ truncated(Normal(0,1); lower=0, upper=δᵢ)
 	δₕ~ truncated(Normal(0,1); lower=0, upper=.5*δᵢ)
-	δₐ~ truncated(Normal(0,1); lower=0, upper=.5)
-    ρ₂~ truncated(Normal(0,1); lower=0, upper=.45)
-    ρ₁~ truncated(Normal(0,1); lower=2*ρ₂, upper=1)
+	δₐ~ truncated(Normal(0,1); lower=0, upper=.5*δᵢ)
+    ρ₂~ truncated(Normal(0,1); lower=0, upper=.29)
+    ρ₁~ truncated(Normal(0,1); lower=2*ρ₂, upper=.6)
 
 	p=[10280000/NN, β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ]
 	S0=10280000/NN-5; E0=0; I0=4; P0=1; A0=0; H0=0; R0=0; F0=0

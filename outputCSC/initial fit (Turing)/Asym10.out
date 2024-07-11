@@ -1,0 +1,127 @@
+┌ Info: Found initial step size
+└   ϵ = 0.0001953125
+┌ Info: Found initial step size
+└   ϵ = 0.0001953125
+┌ Info: Found initial step size
+└   ϵ = 4.8828125e-5
+┌ Info: Found initial step size
+└   ϵ = 0.0015625
+┌ Info: Found initial step size
+└   ϵ = 0.0001953125
+┌ Warning: Assignment to `β` in soft scope is ambiguous because a global variable by the same name exists: `β` will be treated as a new local. Disambiguate by using `local β` to suppress this warning or `global β` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `β′` in soft scope is ambiguous because a global variable by the same name exists: `β′` will be treated as a new local. Disambiguate by using `local β′` to suppress this warning or `global β′` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `β´´` in soft scope is ambiguous because a global variable by the same name exists: `β´´` will be treated as a new local. Disambiguate by using `local β´´` to suppress this warning or `global β´´` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `κ` in soft scope is ambiguous because a global variable by the same name exists: `κ` will be treated as a new local. Disambiguate by using `local κ` to suppress this warning or `global κ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `l` in soft scope is ambiguous because a global variable by the same name exists: `l` will be treated as a new local. Disambiguate by using `local l` to suppress this warning or `global l` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `γₐ` in soft scope is ambiguous because a global variable by the same name exists: `γₐ` will be treated as a new local. Disambiguate by using `local γₐ` to suppress this warning or `global γₐ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `γᵢ` in soft scope is ambiguous because a global variable by the same name exists: `γᵢ` will be treated as a new local. Disambiguate by using `local γᵢ` to suppress this warning or `global γᵢ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `γᵣ` in soft scope is ambiguous because a global variable by the same name exists: `γᵣ` will be treated as a new local. Disambiguate by using `local γᵣ` to suppress this warning or `global γᵣ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `δᵢ` in soft scope is ambiguous because a global variable by the same name exists: `δᵢ` will be treated as a new local. Disambiguate by using `local δᵢ` to suppress this warning or `global δᵢ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `δₚ` in soft scope is ambiguous because a global variable by the same name exists: `δₚ` will be treated as a new local. Disambiguate by using `local δₚ` to suppress this warning or `global δₚ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `δₕ` in soft scope is ambiguous because a global variable by the same name exists: `δₕ` will be treated as a new local. Disambiguate by using `local δₕ` to suppress this warning or `global δₕ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `δₐ` in soft scope is ambiguous because a global variable by the same name exists: `δₐ` will be treated as a new local. Disambiguate by using `local δₐ` to suppress this warning or `global δₐ` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `ρ₂` in soft scope is ambiguous because a global variable by the same name exists: `ρ₂` will be treated as a new local. Disambiguate by using `local ρ₂` to suppress this warning or `global ρ₂` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `ρ₁` in soft scope is ambiguous because a global variable by the same name exists: `ρ₁` will be treated as a new local. Disambiguate by using `local ρ₁` to suppress this warning or `global ρ₁` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:131
+┌ Warning: Assignment to `E0` in soft scope is ambiguous because a global variable by the same name exists: `E0` will be treated as a new local. Disambiguate by using `local E0` to suppress this warning or `global E0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:133
+┌ Warning: Assignment to `I0` in soft scope is ambiguous because a global variable by the same name exists: `I0` will be treated as a new local. Disambiguate by using `local I0` to suppress this warning or `global I0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:133
+┌ Warning: Assignment to `P0` in soft scope is ambiguous because a global variable by the same name exists: `P0` will be treated as a new local. Disambiguate by using `local P0` to suppress this warning or `global P0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:133
+┌ Warning: Assignment to `A0` in soft scope is ambiguous because a global variable by the same name exists: `A0` will be treated as a new local. Disambiguate by using `local A0` to suppress this warning or `global A0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:133
+┌ Warning: Assignment to `H0` in soft scope is ambiguous because a global variable by the same name exists: `H0` will be treated as a new local. Disambiguate by using `local H0` to suppress this warning or `global H0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:133
+┌ Warning: Assignment to `R0` in soft scope is ambiguous because a global variable by the same name exists: `R0` will be treated as a new local. Disambiguate by using `local R0` to suppress this warning or `global R0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:133
+┌ Warning: Assignment to `F0` in soft scope is ambiguous because a global variable by the same name exists: `F0` will be treated as a new local. Disambiguate by using `local F0` to suppress this warning or `global F0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:133
+┌ Warning: Assignment to `X0` in soft scope is ambiguous because a global variable by the same name exists: `X0` will be treated as a new local. Disambiguate by using `local X0` to suppress this warning or `global X0` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:134
+┌ Warning: Assignment to `prob` in soft scope is ambiguous because a global variable by the same name exists: `prob` will be treated as a new local. Disambiguate by using `local prob` to suppress this warning or `global prob` to assign to the existing global variable.
+└ @ /scratch/project_2007115/Turing-ODE-CSC10Asym.jl:136
+2-element Vector{Float64}:
+  130.28710486333927
+ 4066.0
+15-element Vector{Float64}:
+    3.2008695239882416
+    5.698404700222558
+    2.318080854893764
+ 1709.8890046468598
+    0.040988790309082264
+    2.0359863126138373
+    0.14070193287888885
+    0.07456996351041068
+    0.931731168357072
+    0.037375241280821814
+    0.05588306361531906
+    0.026950001129401366
+    1.0954613707269194
+    0.16817996024640747
+    0.8046717142083093
+Chains MCMC chain (6000×28×5 Array{Float64, 3}):
+
+Iterations        = 1001:1:7000
+Number of chains  = 5
+Samples per chain = 6000
+Wall duration     = 5962.12 seconds
+Compute duration  = 5955.88 seconds
+parameters        = σ, β, β′, β´´, NN, κ, l, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ, δₐ, ρ₂, ρ₁
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters        mean        std      mcse    ess_bulk    ess_tail      rhat   ess_per_sec
+      Symbol     Float64    Float64   Float64     Float64     Float64   Float64       Float64
+
+           σ    100.1443     5.9802    0.0616   8117.6147   2410.4332    1.0006        1.3630
+           β      2.8892     0.3981    0.0104   2546.1207   1497.7878    1.0024        0.4275
+          β′      4.9156     1.5738    0.1813     84.8142    282.8854    1.8524        0.0142
+         β´´      2.2759     0.9732    0.1143     78.8483    284.4421    2.0443        0.0132
+          NN   1413.3875   400.4818    9.1681   2224.0173   3668.0862    1.0033        0.3734
+           κ      0.0767     0.1327    0.0051   1175.8681    858.7504    1.0052        0.1974
+           l      1.9942     0.5211    0.0135   2473.0806   2556.8563    1.0040        0.4152
+          γₐ      0.5508     0.3229    0.0085   1490.8835   1153.9646    1.0050        0.2503
+          γᵢ      0.0644     0.0372    0.0006   1756.2264   1306.7119    1.0019        0.2949
+          γᵣ      1.2196     0.3641    0.0299    109.6023    265.9125    1.4673        0.0184
+          δᵢ      0.0402     0.0148    0.0004   1306.8880   1024.6069    1.0048        0.2194
+          δₚ      0.7661     0.5800    0.0302    451.7137    746.4925    1.0774        0.0758
+          δₕ      0.4340     0.2950    0.0167    373.2004    755.0027    1.0953        0.0627
+          δₐ      0.6863     0.2591    0.0262    103.1843    543.9974    1.5473        0.0173
+          ρ₂      0.1636     0.0746    0.0018   2011.9237   3934.7588    1.0032        0.3378
+          ρ₁      0.5841     0.1761    0.0165    119.1924    291.0168    1.4173        0.0200
+
+Quantiles
+  parameters       2.5%       25.0%       50.0%       75.0%       97.5%
+      Symbol    Float64     Float64     Float64     Float64     Float64
+
+           σ    88.9925     96.0470     99.8847    104.0062    112.5648
+           β     1.7542      2.7460      2.9982      3.1660      3.2868
+          β′     1.7857      3.5687      5.3758      6.0775      7.4002
+         β´´     0.7436      1.4373      2.4574      2.9412      4.1453
+          NN   874.1436   1124.3928   1323.5208   1613.5292   2427.3646
+           κ     0.0335      0.0372      0.0401      0.0454      0.5788
+           l     0.4220      1.8486      2.1655      2.3529      2.4865
+          γₐ     0.0022      0.2879      0.6239      0.8296      0.9835
+          γᵢ     0.0208      0.0333      0.0562      0.0865      0.1529
+          γᵣ     0.6581      0.9799      1.2299      1.3704      2.1932
+          δᵢ     0.0100      0.0316      0.0396      0.0488      0.0713
+          δₚ     0.0270      0.2895      0.6445      1.1311      2.1366
+          δₕ     0.0208      0.1930      0.3841      0.6381      1.0857
+          δₐ     0.2473      0.4686      0.6775      0.8848      1.1531
+          ρ₂     0.0153      0.1074      0.1801      0.2244      0.2703
+          ρ₁     0.2802      0.4286      0.5768      0.7422      0.8826
+
