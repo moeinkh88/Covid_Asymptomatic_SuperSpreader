@@ -2,7 +2,9 @@
 # https://doi.org/10.1016/j.chaos.2020.109846
 # https://doi.org/10.1016/j.chaos.2021.110652
 # https://doi.org/10.3390/axioms10030135
-# similar to Turing-ODE-CSC7Asym but differet config for parameters  (β´´, γᵣ,γᵢ, δₚ, δₕ, δₐ, ρ₁)
+# similar to Turing-ODE-CSC7Asym but differet config for parameters  (β´´, γᵣ,γᵢ, δₚ, δₕ, δₐ, ρ₁)'
+# and correct: pp=Array(posterior_samples.value[:,:,1])[i,:]
+	# β, β′, β´´, NN, κ, l, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ, δₐ, ρ₂, ρ₁ = pp[1:15]
 
 using Optim, StatsBase
 using DifferentialEquations
@@ -81,20 +83,20 @@ prob = ODEProblem(SIR, X0, tspan, par)
     # Prior distributions.
     σ ~ InverseGamma(2, 3)
     β ~ truncated(Normal(2, 1); lower=.1, upper=3.3)
-    β′ ~ truncated(Normal(5, 1); lower=1.5*β, upper=12)
-	β´´~ truncated(Normal(2, 1); lower=.7*β, upper=2*β)
+    β′ ~ truncated(Normal(5, 1); lower=2*β, upper=12)
+	β´´~ truncated(Normal(2, 1); lower=.9*β, upper=2*β)
     NN ~ truncated(Normal(1000, 2000); lower=1, upper=10000)
 	κ ~ truncated(Normal(0, 1); lower=0, upper=1)
 	l ~ truncated(Normal(0, 2); lower=0.1, upper=2.5)
 	γₐ ~ truncated(Normal(0,1); lower=0, upper=1)
  	γᵢ~ truncated(Normal(0,1); lower=0.02, upper=1)
-	γᵣ~ truncated(Normal(0,1); lower=1.5*γᵢ, upper=3)
+	γᵣ~ truncated(Normal(0,1); lower=1.5*γᵢ, upper=4)
  	δᵢ~ truncated(Normal(0,1); lower=0, upper=3)
-	δₚ~ truncated(Normal(0,1); lower=0, upper=3)
+	δₚ~ truncated(Normal(0,1); lower=0, upper=δᵢ)
 	δₕ~ truncated(Normal(0,1); lower=0, upper=.5*δᵢ)
 	δₐ~ truncated(Normal(0,1); lower=0, upper=.5)
-    ρ₂~ truncated(Normal(0,1); lower=0, upper=.05)
-    ρ₁~ truncated(Normal(0,1); lower=10*ρ₂, upper=1)
+    ρ₂~ truncated(Normal(0,1); lower=0, upper=.45)
+    ρ₁~ truncated(Normal(0,1); lower=2*ρ₂, upper=1)
 
 	p=[10280000/NN, β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ]
 	S0=10280000/NN-5; E0=0; I0=4; P0=1; A0=0; H0=0; R0=0; F0=0
@@ -126,7 +128,7 @@ posterior_samples = sample(chain[[:β, :β´´,:NN, :κ,:l, :β′, :ρ₁, :ρ�
 Err=zeros(nChain)
 for i in 1:nChain
 	pp=Array(posterior_samples.value[:,:,1])[i,:]
-	β, β´´, NN, κ, l, β′, ρ₁, ρ₂, γₐ,γᵢ,γᵣ,δᵢ,δₚ , δₕ,  δₐ = pp[1:15]
+	β, β′, β´´, NN, κ, l, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ, δₐ, ρ₂, ρ₁ = pp[1:15]
 	p = [10280000/NN, β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ]
 	S0=10280000/NN-5; E0=0; I0=4; P0=1; A0=0; H0=0; R0=0; F0=0
 	X0=[S0, E0, I0, P0, A0, H0, R0, F0]
