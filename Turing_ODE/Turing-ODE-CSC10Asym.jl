@@ -5,7 +5,7 @@
 # similar to Turing-ODE-CSC7Asym but differet config for parameters  (β´´, γᵣ,γᵢ, δₚ, δₕ, δₐ, ρ₁)'
 # and correct: pp=Array(posterior_samples.value[:,:,1])[i,:]
 	# β, β′, β´´, NN, κ, l, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ, δₐ, ρ₂, ρ₁ = pp[1:15]
-
+# and correct the first and second derivative; DS and SE
 using Optim, StatsBase
 using DifferentialEquations
 using Turing
@@ -64,8 +64,8 @@ function SIR(dx, x, par, t)
     S, E, I, P, A, H, R, F = x
 
 # ODE
-    dx[1] = - β * I * S/N - l * β * H * S/N - β′* P * S/N - β´´* P * A/N # susceptible individuals
-    dx[2] = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* P * A/N - κ * E # exposed individuals
+    dx[1] = - β * I * S/N - l * β * H * S/N - β′* P * S/N - β´´* A * S/N # susceptible individuals
+    dx[2] = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* A * S/N - κ * E # exposed individuals
     dx[3] = κ * ρ₁ * E - (γₐ + γᵢ )*I - δᵢ * I #symptomatic and infectious individuals
     dx[4] = κ* ρ₂ * E - (γₐ + γᵢ)*P - δₚ * P # super-spreaders individuals
     dx[5] = κ *(1 - ρ₁ - ρ₂ )* E - δₐ*A# infectious but asymptomatic individuals
@@ -90,7 +90,7 @@ prob = ODEProblem(SIR, X0, tspan, par)
 	l ~ truncated(Normal(0, 2); lower=0.1, upper=2.5)
 	γₐ ~ truncated(Normal(0,1); lower=0, upper=1)
  	γᵢ~ truncated(Normal(0,1); lower=0.02, upper=1)
-	γᵣ~ truncated(Normal(0,1); lower=1.5*γᵢ, upper=4)
+	γᵣ~ truncated(Normal(0,1); lower=γᵢ, upper=1)
  	δᵢ~ truncated(Normal(0,1); lower=0, upper=.1)
 	δₚ~ truncated(Normal(0,1); lower=0, upper=δᵢ)
 	δₕ~ truncated(Normal(0,1); lower=0, upper=.5*δᵢ)
