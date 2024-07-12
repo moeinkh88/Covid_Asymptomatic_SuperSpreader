@@ -28,22 +28,24 @@ TrueF=(Float64.(Vector(DeathData[1,:])))
 ## System definition
 
 # parameters from initial fit
-β=3.7867885928014893 # Transmission coeﬃcient from infected individuals
-l=2.282972432258884 # Relative transmissibility of hospitalized patients
-β′=0.9407139791767547 # Transmission coeﬃcient due to super-spreaders
-β´´=6.767816564146801 # quantifies transmission coefficient due to asymptomatic
-κ=0.11784770556372894 # Rate at which exposed become infectious
-ρ₁=0.58 # Rate at which exposed people become infected I
-ρ₂=0.001 # Rate at which exposed people become super-spreaders
-γₐ=0.15459463331892578# Rate of being hospitalized
-γᵢ=0.6976487340139972 # Recovery rate without being hospitalized
-γᵣ=0.001310080700085496 # Recovery rate of hospitalized patients
-δᵢ=0.0010807082772655262 # Disease induced death rate due to infected class
-δₚ=0.45500168006745334 # Disease induced death rate due to super-spreaders
-δₕ=0.035917596817983934 # Disease induced death rate due to hospitalized class
-δₐ=0.0025773545913321608 #denotes the disease induced death rates due to hospitalized individuals
+pp=[2.9763470555591796
+4.9724275315175905
+2.77222207964141
+1362.9208020440333
+0.03658959949393572
+1.605375275205752
+0.1375531965076037
+0.0560295261424954
+0.9179720534039433
+0.044242996045119866
+0.001724702577525102
+0.003473250106648919
+0.02042169878603325
+0.25088774743033504
+0.5272699408450209]
+β, β′, β´´, NN, κ, l, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ, δₐ, ρ₂, ρ₁ = pp[1:15]
 
-NN=1083.0516691504504
+par=[10280000/NN,  β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ] # parameters
 
 # Initial conditions
 N=10280000/NN # Population Size
@@ -64,8 +66,8 @@ function SIR2(t, u, par)
     S, E, I, P, A, H, R, F = u
 
 # ODE
-    dS = - β * I * S/N - l * β * H * S/N - β′* P * S/N - β´´* P * A/N # susceptible individuals
-    dE = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* P * A/N - κ * E # exposed individuals
+dS = - β * I * S/N - l * β * H * S/N - β′* P * S/N - β´´* A * S/N # susceptible individuals
+dE = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* A * S/N - κ * E # exposed individuals
     dI = κ * ρ₁ * E - (γₐ + γᵢ )*I - δᵢ * I #symptomatic and infectious individuals
     dP = κ* ρ₂ * E - (γₐ + γᵢ)*P - δₚ * P # super-spreaders individuals
     dA = κ *(1 - ρ₁ - ρ₂ )* E - δₐ*A# infectious but asymptomatic individuals
@@ -79,9 +81,14 @@ end
 
 function loss_2f8(b)# loss function
 	p=copy(par)
-	p[5]=b[1]
-	p[12:15]=b[2:5]
-	order = b[6:13] # order of derivatives
+	p[4]=b[1]
+	p[13]=b[2]
+	p[5]=b[3]
+	p[15]=b[4]
+	p[2]=b[5]
+	p[7]=b[6]
+	p[8]=b[7]
+	order = b[8:15] # order of derivatives
 	if size(X0,2) != Int64(ceil(maximum(order))) # to prevent any errors regarding orders higher than 1
 		indx=findall(x-> x>1, order)
 		order[indx]=ones(length(indx))
@@ -93,17 +100,49 @@ function loss_2f8(b)# loss function
     rmsd([C  TrueF], [IPH  F]) # root-mean-square error
 end
 
-p_lo=vcat(0,1e-5*ones(4),.4*ones(8))
-p_up=vcat(10,1,1,1,1,ones(8))
-pvec=vcat(6,.4,.4,.4,.1,ones(8)*.9)
-Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
+
+# Define a penalty function for the constraints
+ function penalty_function(p)
+	β′,δₚ, β´´,δₐ,β,  ρ₁, ρ₂= p[1:7]
+     penalty = 0.0
+    
+     # Add penalties for each constraint violation
+     if β′ < 2 * β 
+         penalty += 300   # Large penalty if β′ is less than 2 * β
+     end
+     # Add other constraints as needed
+     if β´´ >  β || β´´ <  2* β 
+         penalty += 300   
+     end
+     if ρ₁ > 2*ρ₂
+         penalty += 300  
+     end
+     return penalty
+ end
+
+# Combine the objective function with the penalty function
+ function constrained_loss_2f8(p)
+     return loss_2f8(p) + penalty_function(p)
+ end
+
+p_lo=vcat(1.5,0,0,0,.1,0.3,.1,    .7*ones(8))
+p_up=vcat(8,.04,4,.04,3.5,.6,.29,  ones(8))
+pvec=vcat(β′,δₚ, β´´,δₐ,β,  ρ₁, ρ₂,  .95*ones(8))
+
+display("Results for FM3:")
+
+Res2F8=optimize(constrained_loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
 			Optim.Options(outer_iterations = 10,
 						 iterations=200,
 						  show_trace=true,
 						  show_every=1))
 p2f8=vcat(Optim.minimizer(Res2F8))
-par2f8=copy(par); par2f8[5]=p2f8[1]; par2f8[12:15]=p2f8[2:5]; μ2f8=p2f8[6:13]
-
+par2f8=copy(par); par2f8[4]=p2f8[1]; par2f8[13]=p2f8[2]; μ2f8=p2f8[8:15]
+par2f8[5]=p2f8[3]; 
+par2f8[15]=p2f8[4]; 
+par2f8[2]=p2f8[5]; 
+par2f8[7]=p2f8[6]; 
+par2f8[8]=p2f8[7]; 
 
 ## results
 

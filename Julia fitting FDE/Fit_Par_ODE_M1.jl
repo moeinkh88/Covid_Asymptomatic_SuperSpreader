@@ -44,13 +44,15 @@ pp=[2.9763470555591796
 0.25088774743033504
 0.5272699408450209]
 β, β′, β´´, NN, κ, l, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ, δₐ, ρ₂, ρ₁ = pp[1:15]
-
+β′=0
+    ρ₂ =0 
+    δₚ = 0
 par=[10280000/NN,  β, l, β′, β´´, κ, ρ₁, ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ] # parameters
 
 # Initial conditions
 N=10280000/NN # Population Size
-S0=N-5; E0=0; I0=4; P0=1; A0=0; H0=0; R0=0; F0=0
-X0=[N-5, E0, I0, P0, A0, H0, R0, F0] # initial values
+S0=N-4; E0=0; I0=4; P0=0; A0=0; H0=0; R0=0; F0=0
+X0=[N-4, E0, I0, P0, A0, H0, R0, F0] # initial values
 
 tspan=[1,length(C)] # time span [initial time, final time]
 
@@ -58,17 +60,15 @@ tspan=[1,length(C)] # time span [initial time, final time]
 function SIR2(t, u, par)
     # Model parameters.
 	N, β, l, β′, β´´, κ, ρ₁, ρ₂,γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ=par
-    β′=0
-    ρ₂ =0 
-    δₚ = 0
+    
     # Current state.
     S, E, I, P, A, H, R, F = u
-	P=0
+	
 # ODE
     dS = - β * I * S/N - l * β * H * S/N - β′* P * S/N - β´´* A * S/N # susceptible individuals
     dE = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* A * S/N - κ * E # exposed individuals
     dI = κ * ρ₁ * E - (γₐ + γᵢ )*I - δᵢ * I #symptomatic and infectious individuals
-    dP = κ* ρ₂ * E - (γₐ + γᵢ)*P - δₚ * P # super-spreaders individuals
+    dP = 0
     dA = κ *(1 - ρ₁ - ρ₂ )* E - δₐ*A# infectious but asymptomatic individuals
 	dH = γₐ *(I + P ) - γᵣ *H - δₕ *H # hospitalized individuals
 	dR = γᵢ * (I + P ) + γᵣ* H # recovery individuals
@@ -76,12 +76,15 @@ function SIR2(t, u, par)
     return [dS, dE, dI, dP, dA, dH, dR, dF]
 end
 
+
 ## optimazation of parameters
 
 function loss_2f8(b)# loss function
 	p=copy(par)
 	p[5]=b[1]
 	p[15]=b[2]
+	p[2]=b[3]
+	p[7]=b[4]
 	
 	#initial conditions
 	_, x = FDEsolver(SIR2, tspan, X0, ones(8), p, h = .02)
@@ -90,9 +93,12 @@ function loss_2f8(b)# loss function
     rmsd([C  TrueF], [IPH  F]) # root-mean-square error
 end
 
-p_lo=vcat(0,0)
-p_up=vcat(5,.04)
-pvec=vcat(2,.01)
+p_lo=vcat(0,0,.1,0)
+p_up=vcat(5,.04,3.5,.6)
+pvec=vcat(2,.01,2,.5)
+
+display("Results for M1:")
+
 Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
 			Optim.Options(outer_iterations = 3,
 						  iterations=20,
@@ -100,10 +106,9 @@ Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–
 						  show_every=1))
 
 						  
-p2f8=[4.999999962091752, 0.006029738294978857]
-# p2f8=vcat(Optim.minimizer(Res2F8))
+ p2f8=vcat(Optim.minimizer(Res2F8))
 par2f8=copy(par); par2f8[5]=p2f8[1]; par2f8[15]=p2f8[2]; 
-
+par2f8[2]=p2f8[3]; par2f8[7]=p2f8[4]
 
 ## results
 

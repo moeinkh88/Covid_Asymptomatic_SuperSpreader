@@ -64,11 +64,11 @@ function SIR2(t, u, par)
     S, E, I, P, A, H, R, F = u
 
 # ODE
-    dS = - β * I * S/N - l * β * H * S/N - β′* P * S/N - β´´* P * A/N # susceptible individuals
-    dE = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* P * A/N - κ * E # exposed individuals
+dS = - β * I * S/N - l * β * H * S/N - β′* P * S/N - β´´* A * S/N # susceptible individuals
+dE = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* A * S/N - κ * E # exposed individuals
     dI = κ * ρ₁ * E - (γₐ + γᵢ )*I - δᵢ * I #symptomatic and infectious individuals
-    dP = κ* ρ₂ * E - (γₐ + γᵢ)*P - δₚ * P # super-spreaders individuals
-    dA = κ *(1 - ρ₁ - ρ₂ )* E - δₐ*A# infectious but asymptomatic individuals
+    dP = κ* (1-ρ₁) * E - (γₐ + γᵢ)*P - δₚ * P # super-spreaders individuals
+    dA = 0
 	dH = γₐ *(I + P ) - γᵣ *H - δₕ *H # hospitalized individuals
 	dR = γᵢ * (I + P ) + γᵣ* H # recovery individuals
 	dF = δᵢ * I + δₚ* P + δₐ*A + δₕ *H # dead individuals
@@ -96,6 +96,9 @@ end
 p_lo=vcat(0,1e-5*ones(4),.4*ones(8))
 p_up=vcat(10,1,1,1,1,ones(8))
 pvec=vcat(6,.4,.4,.4,.1,ones(8)*.9)
+
+display("Results for M2:")
+
 Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
 			Optim.Options(outer_iterations = 10,
 						 iterations=200,
