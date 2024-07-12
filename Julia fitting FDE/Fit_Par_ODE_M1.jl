@@ -118,7 +118,7 @@ IPH2f8=sum(x2f8[1:50:end,[3,4,6]], dims=2);F2f8=x2f8[1:50:end,8]
 
 Err2f8=rmsd([C  TrueF], [IPH2f8  F2f8]) # RMSE for incommensurate fode model
 
-display(["Err2f8=",Err2f8,"par2f8=",par2f8,"order2f8=",μ2f8])
+display(["Err2f8=",Err2f8,"par2f8=",par2f8])
 # display([IPH2f8, F2f8])
 
 function myshowall(io, x, limit = false)

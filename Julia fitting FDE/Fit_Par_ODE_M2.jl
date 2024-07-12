@@ -28,22 +28,25 @@ TrueF=(Float64.(Vector(DeathData[1,:])))
 ## System definition
 
 # parameters from initial fit
-β=3.7867885928014893 # Transmission coeﬃcient from infected individuals
-l=2.282972432258884 # Relative transmissibility of hospitalized patients
-β′=0.9407139791767547 # Transmission coeﬃcient due to super-spreaders
-β´´=6.767816564146801 # quantifies transmission coefficient due to asymptomatic
-κ=0.11784770556372894 # Rate at which exposed become infectious
-ρ₁=0.58 # Rate at which exposed people become infected I
-ρ₂=0.001 # Rate at which exposed people become super-spreaders
-γₐ=0.15459463331892578# Rate of being hospitalized
-γᵢ=0.6976487340139972 # Recovery rate without being hospitalized
-γᵣ=0.001310080700085496 # Recovery rate of hospitalized patients
-δᵢ=0.0010807082772655262 # Disease induced death rate due to infected class
-δₚ=0.45500168006745334 # Disease induced death rate due to super-spreaders
-δₕ=0.035917596817983934 # Disease induced death rate due to hospitalized class
-δₐ=0.0025773545913321608 #denotes the disease induced death rates due to hospitalized individuals
-
-NN=1083.0516691504504
+pp=[2.9763470555591796
+4.9724275315175905
+2.77222207964141
+1362.9208020440333
+0.03658959949393572
+1.605375275205752
+0.1375531965076037
+0.0560295261424954
+0.9179720534039433
+0.044242996045119866
+0.001724702577525102
+0.003473250106648919
+0.02042169878603325
+0.25088774743033504
+0.5272699408450209]
+β, β′, β´´, NN, κ, l, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ, δₐ, ρ₂, ρ₁ = pp[1:15]
+β´´=0
+δₐ=0
+par=[10280000/NN,  β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ] # parameters
 
 # Initial conditions
 N=10280000/NN # Population Size
@@ -79,44 +82,62 @@ end
 
 function loss_2f8(b)# loss function
 	p=copy(par)
-	p[5]=b[1]
-	p[12:15]=b[2:5]
-	order = b[6:13] # order of derivatives
-	if size(X0,2) != Int64(ceil(maximum(order))) # to prevent any errors regarding orders higher than 1
-		indx=findall(x-> x>1, order)
-		order[indx]=ones(length(indx))
-	end
+	p[4]=b[1]
+	p[13]=b[2]
+	p[2]=b[3]
+	p[7]=b[4]
+
 	#initial conditions
-	_, x = FDEsolver(SIR2, tspan, X0, order, p, h = .02)
+	_, x = FDEsolver(SIR2, tspan, X0, ones(8), p, h = .02)
     IPH=vec(sum(x[1:50:end,[3,4,6]], dims=2))
 	F=x[1:50:end,8]
     rmsd([C  TrueF], [IPH  F]) # root-mean-square error
 end
 
-p_lo=vcat(0,1e-5*ones(4),.4*ones(8))
-p_up=vcat(10,1,1,1,1,ones(8))
-pvec=vcat(6,.4,.4,.4,.1,ones(8)*.9)
+# Define a penalty function for the constraints
+function penalty_function(p)
+    β=p[3]
+	β′= p[1]
+    penalty = 0.0
+    
+    # Add penalties for each constraint violation
+    if β′ < 1.3 * β 
+        penalty += 300   # Large penalty if β′ is less than 2 * β
+    end
+    return penalty
+end
+
+# Combine the objective function with the penalty function
+function constrained_loss_2f8(p)
+    return loss_2f8(p) + penalty_function(p)
+end
+
+p_lo=vcat(1.5,0,.1,0.3)
+p_up=vcat(8,.04,3.5,.9)
+pvec=vcat(6,.01,2,.5)
+
 
 display("Results for M2:")
 
 Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
-			Optim.Options(outer_iterations = 10,
-						 iterations=200,
+			Optim.Options(outer_iterations = 5,
+						 iterations=100,
 						  show_trace=true,
 						  show_every=1))
-p2f8=vcat(Optim.minimizer(Res2F8))
-par2f8=copy(par); par2f8[5]=p2f8[1]; par2f8[12:15]=p2f8[2:5]; μ2f8=p2f8[6:13]
 
+p2f8=vcat(Optim.minimizer(Res2F8))
+par2f8=copy(par); par2f8[4]=p2f8[1]; par2f8[13]=p2f8[2]; 
+par2f8[2]=p2f8[3]; par2f8[7]=p2f8[4]
 
 ## results
 
-_, x2f8 = FDEsolver(SIR2, tspan, X0, μ2f8, par2f8, h = .02) # solve incommensurate fode model
+_, x2f8 = FDEsolver(SIR2, tspan, X0, ones(8), par2f8, h = .02) # solve incommensurate fode model
 
 IPH2f8=sum(x2f8[1:50:end,[3,4,6]], dims=2);F2f8=x2f8[1:50:end,8]
 
 Err2f8=rmsd([C  TrueF], [IPH2f8  F2f8]) # RMSE for incommensurate fode model
 
-display(["Err2f8=",Err2f8,"par2f8=",par2f8,"order2f8=",μ2f8])
+display(["Err2f8=",Err2f8,"par2f8=",par2f8])
 # display([IPH2f8, F2f8])
 
 function myshowall(io, x, limit = false)

@@ -102,8 +102,8 @@ pvec=vcat(2,.01,2,.5,ones(8))
 
 display("Results for FM1:")
 Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
-			Optim.Options(outer_iterations = 3,
-						 iterations=20,
+			Optim.Options(outer_iterations = 5,
+						 iterations=100,
 						  show_trace=true,
 						  show_every=1))
 
