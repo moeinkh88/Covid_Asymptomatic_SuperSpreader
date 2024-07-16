@@ -126,12 +126,13 @@ Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–
 						  show_every=1))
 
 p2f8=vcat(Optim.minimizer(Res2F8))
+p2f8=[6.669840725101765, 0.028552717476688135, 3.1160786489725814, 0.7951472562498832]
 par2f8=copy(par); par2f8[4]=p2f8[1]; par2f8[13]=p2f8[2]; 
 par2f8[2]=p2f8[3]; par2f8[7]=p2f8[4]
 
 ## results
 
-_, x2f8 = FDEsolver(SIR2, tspan, X0, ones(8), par2f8, h = .02) # solve incommensurate fode model
+t, x2f8 = FDEsolver(SIR2, tspan, X0, ones(8), par2f8, h = .02) # solve incommensurate fode model
 
 IPH2f8=sum(x2f8[1:50:end,[3,4,6]], dims=2);F2f8=x2f8[1:50:end,8]
 
