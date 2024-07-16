@@ -44,31 +44,31 @@ pp=[2.9763470555591796
 0.25088774743033504
 0.5272699408450209]
 β, β′, β´´, NN, κ, l, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ, δₐ, ρ₂, ρ₁ = pp[1:15]
-	β′=0
-    ρ₂ =0 
-    δₚ = 0
+
 par=[10280000/NN,  β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ] # parameters
 
 # Initial conditions
 N=10280000/NN # Population Size
-S0=N-4; E0=0; I0=4; P0=0; A0=0; H0=0; R0=0; F0=0
-X0=[N-4, E0, I0, P0, A0, H0, R0, F0] # initial values
+S0=N-5; E0=0; I0=4; P0=1; A0=0; H0=0; R0=0; F0=0
+X0=[N-5, E0, I0, P0, A0, H0, R0, F0] # initial values
 
 tspan=[1,length(C)] # time span [initial time, final time]
 
-# Define model 1: with asymptomatic coefficients (no super spreaders)
+# Define model 1: with super spreaders
+
+# Define model 12: with super spreaders + asymptomatic coefficients
 function SIR2(t, u, par)
     # Model parameters.
 	N, β, l, β′, β´´, κ, ρ₁, ρ₂,γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ=par
-    
+
     # Current state.
     S, E, I, P, A, H, R, F = u
-	
+
 # ODE
-    dS = - β * I * S/N - l * β * H * S/N - β′* P * S/N - β´´* A * S/N # susceptible individuals
-    dE = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* A * S/N - κ * E # exposed individuals
+dS = - β * I * S/N - l * β * H * S/N - β′* P * S/N - β´´* A * S/N # susceptible individuals
+dE = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* A * S/N - κ * E # exposed individuals
     dI = κ * ρ₁ * E - (γₐ + γᵢ )*I - δᵢ * I #symptomatic and infectious individuals
-    dP = 0
+    dP = κ* ρ₂ * E - (γₐ + γᵢ)*P - δₚ * P # super-spreaders individuals
     dA = κ *(1 - ρ₁ - ρ₂ )* E - δₐ*A# infectious but asymptomatic individuals
 	dH = γₐ *(I + P ) - γᵣ *H - δₕ *H # hospitalized individuals
 	dR = γᵢ * (I + P ) + γᵣ* H # recovery individuals
@@ -76,15 +76,12 @@ function SIR2(t, u, par)
     return [dS, dE, dI, dP, dA, dH, dR, dF]
 end
 
-## optimazation of parameters and order of incommensurate fractional order model
+## optimazation of parameters and order of incommensurate fractional order model2
 
 function loss_2f8(b)# loss function
 	p=copy(par)
-	p[5]=b[1]
-	p[15]=b[2]
-	p[2]=b[3]
-	p[7]=b[4]
-	order = b[5:12] # order of derivatives
+    p[4]=b[1]
+	order = b[2:9] # order of derivatives
 	if size(X0,2) != Int64(ceil(maximum(order))) # to prevent any errors regarding orders higher than 1
 		indx=findall(x-> x>1, order)
 		order[indx]=ones(length(indx))
@@ -96,25 +93,24 @@ function loss_2f8(b)# loss function
     rmsd([C  TrueF], [IPH  F]) # root-mean-square error
 end
 
-p_lo=vcat(0,0,.1,0,.7*ones(8))
-p_up=vcat(5,.04,3.5,.6,ones(8))
-pvec=vcat(2,.01,2,.5,ones(8))
 
-display("Results for FM1:")
+p_lo=vcat( β, .7*ones(8))
+p_up=vcat(4*β, ones(8))
+pvec=vcat(β′, .99*ones(8))
+
+display("Results for FM3 only Orders:")
+
 Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
 			Optim.Options(outer_iterations = 3,
 						 iterations=20,
 						  show_trace=true,
 						  show_every=1))
-
-						  
 p2f8=vcat(Optim.minimizer(Res2F8))
-par2f8=copy(par); par2f8[5]=p2f8[1]; par2f8[15]=p2f8[2]; μ2f8=p2f8[3:10]
-par2f8[2]=p2f8[3]; par2f8[7]=p2f8[4]
+μ2f8=p2f8[1:8]
 
 ## results
 
-t, x2f8 = FDEsolver(SIR2, tspan, X0, μ2f8, par2f8, h = .02) # solve incommensurate fode model
+_, x2f8 = FDEsolver(SIR2, tspan, X0, μ2f8, par2f8, h = .02) # solve incommensurate fode model
 
 IPH2f8=sum(x2f8[1:50:end,[3,4,6]], dims=2);F2f8=x2f8[1:50:end,8]
 

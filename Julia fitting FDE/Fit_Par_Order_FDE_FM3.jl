@@ -54,7 +54,6 @@ X0=[N-5, E0, I0, P0, A0, H0, R0, F0] # initial values
 
 tspan=[1,length(C)] # time span [initial time, final time]
 
-par=[N, β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ] # parameters
 # Define model 1: with super spreaders
 
 # Define model 12: with super spreaders + asymptomatic coefficients
@@ -108,14 +107,14 @@ end
     
      # Add penalties for each constraint violation
      if β′ < 2 * β 
-         penalty += 300   # Large penalty if β′ is less than 2 * β
+         penalty += 30   # Large penalty if β′ is less than 2 * β
      end
      # Add other constraints as needed
-     if β´´ >  β || β´´ <  2* β 
-         penalty += 300   
+     if β´´ >  .8*β || β´´ <  2* β 
+         penalty += 30   
      end
-     if ρ₁ > 2*ρ₂
-         penalty += 300  
+     if ρ₁ > 1.1*ρ₂
+         penalty += 30  
      end
      return penalty
  end
@@ -127,7 +126,7 @@ end
 
 p_lo=vcat(1.5,0,0,0,.1,0.3,.1,    .7*ones(8))
 p_up=vcat(8,.04,4,.04,3.5,.6,.29,  ones(8))
-pvec=vcat(β′,δₚ, β´´,δₐ,β,  ρ₁, ρ₂,  .95*ones(8))
+pvec=vcat(β′,δₚ, β´´,δₐ,β,  ρ₁, ρ₂,  .99*ones(8))
 
 display("Results for FM3:")
 

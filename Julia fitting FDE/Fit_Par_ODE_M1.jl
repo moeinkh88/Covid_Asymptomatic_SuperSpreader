@@ -95,7 +95,7 @@ end
 
 p_lo=vcat(0,0,.1,0)
 p_up=vcat(5,.04,3.5,.6)
-pvec=vcat(2,.01,2,.5)
+pvec=vcat( β´´, δₐ, β, ρ₁)
 
 display("Results for M1:")
 
