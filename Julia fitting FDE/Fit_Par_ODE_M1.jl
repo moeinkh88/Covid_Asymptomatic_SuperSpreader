@@ -100,14 +100,14 @@ pvec=vcat( β´´, δₐ, β, ρ₁)
 display("Results for M1:")
 
 Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
-			Optim.Options(outer_iterations = 3,
-						  iterations=20,
+			Optim.Options(outer_iterations = 5,
+						  iterations=60,
 						  show_trace=true,
 						  show_every=1))
 
 						  
  p2f8=vcat(Optim.minimizer(Res2F8))
- p2f8=[4.814937694278031, 0.005633848310585277, 3.3775011085928806, 0.6992734423664116]
+#  p2f8=[4.814937694278031, 0.005633848310585277, 3.3775011085928806, 0.6992734423664116]
 par2f8=copy(par); par2f8[5]=p2f8[1]; par2f8[15]=p2f8[2]; 
 par2f8[2]=p2f8[3]; par2f8[7]=p2f8[4]
 

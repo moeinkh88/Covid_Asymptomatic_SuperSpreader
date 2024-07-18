@@ -106,7 +106,10 @@ Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–
 						  show_trace=true,
 						  show_every=1))
 p2f8=vcat(Optim.minimizer(Res2F8))
-μ2f8=p2f8[1:8]
+par2f8=copy(par); 
+par2f8[4
+]=p2f8[1];
+μ2f8=p2f8[2:9]
 
 ## results
 
