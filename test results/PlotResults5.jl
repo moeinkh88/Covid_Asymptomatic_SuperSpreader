@@ -53,6 +53,7 @@ par=[10280000/NN,  β, l, β′, β´´, κ, ρ₁, ρ₂,	γₐ,	γᵢ,	γᵣ,	
 N=10280000/NN # Population Size
 S0=N-5; E0=0; I0=4; P0=1; A0=0; H0=0; R0=0; F0=0
 X0=[N-5, E0, I0, P0, A0, H0, R0, F0] # initial values
+X01=[N-4, E0, I0, P0-1, A0, H0, R0, F0] # initial values
 tspan=[1,length(C)] # time span [initial time, final time]
 
 function SIR_M1(t, u, par)
@@ -127,10 +128,8 @@ par_M2=[7542.62462248916, 3.12996077117126, 1.605375275205752, 7.999999997998878
 # M3
 # "Err2f8="
 #   115.23024462015562
-# β′ = 4.9724275315175905
 #    "par2f8="
 par_M3=par;
-# par_M3[4]=7.895865150500946
 
 
 # FM1
@@ -159,11 +158,11 @@ par_FM3=[7542.62462248916, 2.9763470555591796, 1.605375275205752, 7.895865150500
 Order_FM3=[0.9785857005003694, 0.999999999531513, 0.9999999869472375, 0.9999999996031644, 0.999999999151962, 0.9999999974787451, 0.9251790257359261, 0.9398986700128771]
 
 ## Errors
-t, xM1 = FDEsolver(SIR_M1, tspan, X0, ones(8), par_M1, h = .1,nc=4) # solve ode model M1
+t, xM1 = FDEsolver(SIR_M1, tspan, X01, ones(8), par_M1, h = .1,nc=4) # solve ode model M1
 t, xM2 = FDEsolver(SIR_M2, tspan, X0, ones(8), par_M2, h = .1,nc=4) # solve ode model M2
 t, xM3 = FDEsolver(SIR_M3, tspan, X0, ones(8), par_M3, h = .1,nc=4) # solve ode model M3
 
-_, xFM1= FDEsolver(SIR_M1, tspan, X0, Order_FM1, par_FM1, h = .1,nc=4) # solve incommensurate fode model
+_, xFM1= FDEsolver(SIR_M1, tspan, X01, Order_FM1, par_FM1, h = .1,nc=4) # solve incommensurate fode model
 _, xFM2= FDEsolver(SIR_M2, tspan, X0, Order_FM2, par_FM2, h = .1,nc=4) # solve incommensurate fode model
 _, xFM3= FDEsolver(SIR_M3, tspan, X0, Order_FM3, par_FM3, h = .1,nc=4) # solve incommensurate fode model
 
@@ -200,30 +199,30 @@ plot(DateTick2,C,color=:gray22,markerstrokewidth=0,marker=(:circle),linestyle=:d
 
 scatter(DateTick2,TrueF, label= "Real data",legendposition=(.16,.9),
 	title = "(b)" , titleloc = :left, titlefont = font(9), color=:gray22,markerstrokewidth=0)
-	plF=plot!([F1 F1f8 F2 F2f8], ylabel="Cumulative death cases",linestyle=[:solid :dash :dot :dashdot],
+	plF=plot!([DM1 DM2 DM3 DFM1 DFM2 DFM3],	 ylabel="Cumulative death cases",linestyle=[:solid :dash :dot :dashdot],
 	color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3],
  labels=["M1, RMSD=112.85" "FM1, RMSD=96.25" "M2, RMSD=95.19" "FM2, RMSD=95.02"],xrotation=rad2deg(pi/3), linewidth=3)
 
 PlPortugal=plot(plC,plF, layout = grid(1,2), size=(700,450))
 
-savefig(PlPortugal,"PlPortugal.svg")
+# savefig(PlPortugal,"PlPortugal.svg")
 ##S, E, I, P, A, H, R, F
-pl1=plot(t,[x1[:,1] x1f8[:,1] x2[:,1] x2f8[:,1]], color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3],  labels=["M1" "FM1" "M2" "FM2"],ylabel="S")
+pl1=plot(t,[xM1[:,1] xM2[:,1] xM3[:,1]  xFM1[:,1] xFM2[:,1] xFM3[:,1]], color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3],  labels=["M1" "FM1" "M2" "FM2"],ylabel="S")
 
-	pl2=plot(t,[x1[:,2] x1f8[:,2] x2[:,2] x2f8[:,2]],color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3], legend=:false,ylabel="E")
+	pl2=plot(t,[xM1[:,2] xM2[:,2] xM3[:,2]  xFM1[:,2] xFM2[:,2] xFM3[:,2]],color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3], legend=:false,ylabel="E")
 
-	pl3=plot(t,[x1[:,3] x1f8[:,3] x2[:,3] x2f8[:,3]],color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3], legend=:false,ylabel="I")
+	pl3=plot(t,[xM1[:,3] xM2[:,3] xM3[:,3]  xFM1[:,3] xFM2[:,3] xFM3[:,3]],color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3], legend=:false,ylabel="I")
 
-	pl4=plot(t,[x1[:,4] x1f8[:,4] x2[:,4] x2f8[:,4]],color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3],   legend=:false,ylabel="P")
+	pl4=plot(t,[xM1[:,4] xM2[:,4] xM3[:,4]  xFM1[:,4] xFM2[:,4] xFM3[:,4]],color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3],   legend=:false,ylabel="P")
 
-	pl5=plot(t,[x1[:,5] x1f8[:,5] x2[:,5] x2f8[:,5]],  legend=:false,ylabel="A",color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3])
+	pl5=plot(t,[xM1[:,5] xM2[:,5] xM3[:,5]  xFM1[:,5] xFM2[:,5] xFM3[:,5]],  legend=:false,ylabel="A",color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3])
 
-	pl6=plot(t,[x1[:,6] x1f8[:,6] x2[:,6] x2f8[:,6]], legend=:false,ylabel="H",color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3])
+	pl6=plot(t,[xM1[:,6] xM2[:,6] xM3[:,6]  xFM1[:,6] xFM2[:,6] xFM3[:,6]], legend=:false,ylabel="H",color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3])
 
-	pl7=plot(t,[x1[:,7] x1f8[:,7] x2[:,7] x2f8[:,7]] , legend=:false,color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3],
+	pl7=plot(t,[xM1[:,7] xM2[:,7] xM3[:,7]  xFM1[:,7] xFM2[:,7] xFM3[:,7]], legend=:false,color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3],
 	ylabel="R",xlabel="time (day)")
 
-	pl8=plot(t,[x1[:,8] x1f8[:,8] x2[:,8] x2f8[:,8]] ,  legend=:false,color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3],
+	pl8=plot(t,[xM1[:,8] xM2[:,8] xM3[:,8]  xFM1[:,8] xFM2[:,8] xFM3[:,8]] ,  legend=:false,color=[:slateblue2 :dodgerblue1 :darkorange1 :palegreen3],
 		ylabel="F",xlabel="time (day)")
 
 

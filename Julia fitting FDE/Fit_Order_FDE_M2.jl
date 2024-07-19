@@ -76,7 +76,7 @@ p_lo=vcat(.7*ones(8))
 p_up=vcat(ones(8))
 pvec=vcat(.99*ones(8))
 
-display("Results for FM2:")
+display("Results for FM2 only orders:")
 
 Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
 			Optim.Options(outer_iterations = 5,
