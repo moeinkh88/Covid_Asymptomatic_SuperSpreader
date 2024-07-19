@@ -49,7 +49,7 @@ function SIR2(t, u, par)
     dE = β * I * S/N + l * β * H * S/N + β′ *P* S/N + β´´* A * S/N - κ * E # exposed individuals
     dI = κ * ρ₁ * E - (γₐ + γᵢ )*I - δᵢ * I #symptomatic and infectious individuals
     dP = 0
-    dA = κ *(1 - ρ₁ - ρ₂ )* E - δₐ*A# infectious but asymptomatic individuals
+    dA = κ *(1 - ρ₁ )* E - δₐ*A# infectious but asymptomatic individuals
 	dH = γₐ *(I + P ) - γᵣ *H - δₕ *H # hospitalized individuals
 	dR = γᵢ * (I + P ) + γᵣ* H # recovery individuals
 	dF = δᵢ * I + δₚ* P + δₐ*A + δₕ *H # dead individuals
