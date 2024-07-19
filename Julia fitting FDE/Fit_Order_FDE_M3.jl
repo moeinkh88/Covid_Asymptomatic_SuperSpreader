@@ -28,33 +28,14 @@ TrueF=(Float64.(Vector(DeathData[1,:])))
 ## System definition
 
 # parameters from initial fit
-pp=[2.9763470555591796
-4.9724275315175905
-2.77222207964141
-1362.9208020440333
-0.03658959949393572
-1.605375275205752
-0.1375531965076037
-0.0560295261424954
-0.9179720534039433
-0.044242996045119866
-0.001724702577525102
-0.003473250106648919
-0.02042169878603325
-0.25088774743033504
-0.5272699408450209]
-β, β′, β´´, NN, κ, l, γₐ, γᵢ, γᵣ, δᵢ, δₚ, δₕ, δₐ, ρ₂, ρ₁ = pp[1:15]
-
-par=[10280000/NN,  β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ] # parameters
-
+par=[7542.62462248916, 1.7573386400179696, 1.605375275205752, 8.999999999999728, 4.999999999999894, 0.03658959949393572, 0.5565815172096316, 0.26999999999999963, 0.1375531965076037, 0.0560295261424954, 0.9179720534039433, 0.044242996045119866, 4.96953260319277e-17, 0.003473250106648919, 0.01814211561562904];
 # Initial conditions
-N=10280000/NN # Population Size
+N=par[1] # Population Size
 S0=N-5; E0=0; I0=4; P0=1; A0=0; H0=0; R0=0; F0=0
 X0=[N-5, E0, I0, P0, A0, H0, R0, F0] # initial values
 
 tspan=[1,length(C)] # time span [initial time, final time]
 
-par=[N, β, l, β′, β´´, κ, ρ₁,	ρ₂,	γₐ,	γᵢ,	γᵣ,	δᵢ,	δₚ, δₕ, δₐ] # parameters
 # Define model 1: with super spreaders
 
 # Define model 12: with super spreaders + asymptomatic coefficients
@@ -81,81 +62,43 @@ end
 
 function loss_2f8(b)# loss function
 	p=copy(par)
-	p[4]=b[1]
-	p[13]=b[2]
-	p[5]=b[3]
-	p[15]=b[4]
-	p[2]=b[5]
-	p[7]=b[6]
-	p[8]=b[7]
+	order = b[1:8] # order of derivatives
+	if size(X0,2) != Int64(ceil(maximum(order))) # to prevent any errors regarding orders higher than 1
+		indx=findall(x-> x>1, order)
+		order[indx]=ones(length(indx))
+	end
 	#initial conditions
-	_, x = FDEsolver(SIR2, tspan, X0, ones(8), p, h = .02)
+	_, x = FDEsolver(SIR2, tspan, X0, order, p, h = .02)
     IPH=vec(sum(x[1:50:end,[3,4,6]], dims=2))
 	F=x[1:50:end,8]
     rmsd([C  TrueF], [IPH  F]) # root-mean-square error
 end
 
 
+p_lo=vcat( .7*ones(8))
+p_up=vcat(ones(8))
+pvec=vcat(.99*ones(8))
 
-# Define a penalty function for the constraints
-function penalty_function(p)
-	β′,δₚ, β´´,δₐ,β,  ρ₁, ρ₂= p[1:7]
-     penalty = 0.0
-    
-     # Add penalties for each constraint violation
-     if β′ < 1.5 * β 
-         penalty += 300   # Large penalty if β′ is less than 2 * β
-     end
-     # Add other constraints as needed
-     if β´´ <  .95*β 
-         penalty += 300   
-     end
-     if β´´ >  1.5* β 
-        penalty += 300   
-    end
-    if  β′ <  β´´
-        penalty += 600   
-    end
-     if ρ₁ < 2*ρ₂
-         penalty += 300  
-     end
-     return penalty
- end
+display("Results for FM3 only Orders:")
 
-# Combine the objective function with the penalty function
- function constrained_loss_2f8(p)
-     return loss_2f8(p) + penalty_function(p)
- end
-
-p_lo=vcat(1.5, 0.001, 0,   0,  .1, 0.3,  .1)
-p_up=vcat(9,  .04,  5,  .04,  3.5,  .6,  .15)
-pvec=vcat(β′,δₚ, β´´,   δₐ,   β,  ρ₁, .15)
-
-
-display("Results for M3:")
-
-Res2F8=optimize(constrained_loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
-			Optim.Options(outer_iterations = 4,
-						 iterations=30,
+Res2F8=optimize(loss_2f8,p_lo,p_up,pvec,Fminbox(LBFGS()),# Broyden–Fletcher–Goldfarb–Shanno algorithm
+			Optim.Options(outer_iterations = 5,
+						 iterations=60,
 						  show_trace=true,
 						  show_every=1))
 p2f8=vcat(Optim.minimizer(Res2F8))
-par2f8=copy(par); par2f8[4]=p2f8[1]; par2f8[13]=p2f8[2]; 
-par2f8[5]=p2f8[3]; 
-par2f8[15]=p2f8[4]; 
-par2f8[2]=p2f8[5]; 
-par2f8[7]=p2f8[6]; 
-par2f8[8]=p2f8[7]; 
+par2f8=copy(par); 
+μ2f8=p2f8[1:8]
 
 ## results
 
-_, x2f8 = FDEsolver(SIR2, tspan, X0, ones(8), par2f8, h = .02) # solve incommensurate fode model
+_, x2f8 = FDEsolver(SIR2, tspan, X0, μ2f8, par2f8, h = .02) # solve incommensurate fode model
 
 IPH2f8=sum(x2f8[1:50:end,[3,4,6]], dims=2);F2f8=x2f8[1:50:end,8]
 
 Err2f8=rmsd([C  TrueF], [IPH2f8  F2f8]) # RMSE for incommensurate fode model
 
-display(["Err2f8=",Err2f8,"par2f8=",par2f8])
+display(["Err2f8=",Err2f8,"par2f8=",par2f8,"order2f8=",μ2f8])
 # display([IPH2f8, F2f8])
 
 function myshowall(io, x, limit = false)

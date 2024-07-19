@@ -190,7 +190,7 @@ pl1=plot(t,[x1[:,1] x1f8[:,1] x2[:,1] x2f8[:,1]], color=[:slateblue2 :dodgerblue
 PlotSEIPAHRF=plot(pl1,pl2,pl3,pl4,pl5,pl6,pl7,pl8, linewidth=3, layout = grid(4,2),
 	linestyle=[:solid :dash :dot :dashdot],size=(800,570))
 
-savefig(PlotSEIPAHRF,"PlotSEIPAHRF.svg")
+# savefig(PlotSEIPAHRF,"PlotSEIPAHRF.svg")
 
 #plot population
 N1=sum(x1[1:10:end,:],dims=2)
@@ -202,4 +202,4 @@ PlPop=plot(DateTick2,[N1 N1f8 N2 N2f8], color=[:slateblue2 :dodgerblue1 :darkora
 		linestyle=[:solid :dash :dot :dashdot], legendposition=(.2,.3),
 		legendfont=font(10), labels=["M1" "FM1" "M2" "FM2"],ylabel="N (involved population)")
 
-savefig(PlPop,"PlPop.svg")
+# savefig(PlPop,"PlPop.svg")
