@@ -188,20 +188,20 @@ DateTick=Date(2020,3,3):Day(1):Date(2020,5,17)
 DateTick2= Dates.format.(DateTick, "d u")
 
 gr()
-ColorPalette=[:dodgerblue1 :green :darkviolet :blue :green2 :magenta]
+ColorPalette=[:magenta2 :darkgoldenrod1 :cyan4 :blueviolet :orangered1 :lime]
 plot(DateTick2,C,color=:gray22,markerstrokewidth=0,marker=(:circle),linestyle=:dot,
  title = "(a)" , titleloc = :left, titlefont = font(9),xrotation=rad2deg(pi/3))
  plC=plot!([IPH_M1 IPH_M2 IPH_M3 IPH_FM1 IPH_FM2 IPH_FM3], ylabel="Daily new confirmed cases",
-		color=ColorPalette,linestyle=[:solid :solid :solid :dash :dash :dash ],
- legend=:false, linewidth=3)
+		color=ColorPalette,linestyle=[:dash :dash :dash :solid :solid :solid],
+ legend=:false, linewidth=2.6)
 
 scatter(DateTick2,TrueF, label= "Real data",legendposition=(.16,.9),
 	title = "(b)" , titleloc = :left, titlefont = font(9), color=:gray22,markerstrokewidth=0)
-	plF=plot!([DM1 DM2 DM3 DFM1 DFM2 DFM3],	 ylabel="Cumulative death cases",linestyle=[:solid :dash :dot :dashdot],
+	plF=plot!([DM1 DM2 DM3 DFM1 DFM2 DFM3],	 ylabel="Cumulative death cases",linestyle=[:dash :dash :dash :solid :solid :solid ],
 	color=ColorPalette,
- labels=["M1, RMSD=$(round(ErrM1,digits=3))" "M2, RMSD=$(round(ErrM2,digits=3))" "M3, RMSD=$(round(ErrM3,digits=3))" "FM1, RMSD=$(round(ErrFM1,digits=3))" "FM2, RMSD=$(round(ErrFM2,digits=3))" "FM3, RMSD=$(round(ErrFM3,digits=3))"],xrotation=rad2deg(pi/3), linewidth=3)
+ labels=["M1, RMSD=$(round(ErrM1,digits=3))" "M2, RMSD=$(round(ErrM2,digits=3))" "M3, RMSD=$(round(ErrM3,digits=3))" "FM1, RMSD=$(round(ErrFM1,digits=3))" "FM2, RMSD=$(round(ErrFM2,digits=3))" "FM3, RMSD=$(round(ErrFM3,digits=3))"],xrotation=rad2deg(pi/3), linewidth=2)
 
-PlPortugal=plot(plC,plF, layout = grid(1,2), size=(700,450))
+PlPortugal=plot(plC,plF, layout = grid(1,2), size=(750,500))
 
 # savefig(PlPortugal,"PlPortugal.svg")
 ##S, E, I, P, A, H, R, F
@@ -227,12 +227,11 @@ labels=["M1, RMSD=$(round(ErrM1,digits=3))" "M2, RMSD=$(round(ErrM2,digits=3))" 
 
 
 PlotSEIPAHRF=plot(pl1,pl2,pl3,pl4,pl5,pl6,pl7,pl8, linewidth=3, layout = grid(4,2),
-	linestyle=[:solid :dash :dot :dashdot],size=(800,670))
+	linestyle=[:dash :dash :dash :solid :solid :solid],size=(850,670))
 
 # savefig(PlotSEIPAHRF,"PlotSEIPAHRF.svg")
 
-#plot population
-N1=sum(xM1[1:10:end,:],dims=2)
+#plot populationN1=sum(xM1[1:10:end,:],dims=2)
 N2=sum(xM2[1:10:end,:],dims=2)
 N3=sum(xM3[1:10:end,:],dims=2)
 NF1=sum(xFM1[1:10:end,:],dims=2)
