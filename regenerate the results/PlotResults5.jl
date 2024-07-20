@@ -206,7 +206,7 @@ PlPortugal=plot(plC,plF, layout = grid(1,2), size=(750,500))
 savefig(PlPortugal,"PlPortugal.svg")
 ##S, E, I, P, A, H, R, F
 pl1=plot(t,[xM1[:,1] xM2[:,1] xM3[:,1]  xFM1[:,1] xFM2[:,1] xFM3[:,1]], color=ColorPalette,  
-labels=["M1" "M2" "M3" "FM1" "FM2" "FM3"],ylabel="S")
+labels=["M1, RMSD=$(round(ErrM1,digits=3))" "M2, RMSD=$(round(ErrM2,digits=3))" "M3, RMSD=$(round(ErrM3,digits=3))" "FM1, RMSD=$(round(ErrFM1,digits=3))" "FM2, RMSD=$(round(ErrFM2,digits=3))" "FM3, RMSD=$(round(ErrFM3,digits=3))"],ylabel="S")
 
 	pl2=plot(t,[xM1[:,2] xM2[:,2] xM3[:,2]  xFM1[:,2] xFM2[:,2] xFM3[:,2]],color=ColorPalette, legend=:false,ylabel="E")
 
